@@ -1,0 +1,10 @@
+.quiz-question{
+    border: 1px solid red;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    .arrow{
+        cursor: pointer;
+    }
+}

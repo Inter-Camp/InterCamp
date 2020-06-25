@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 200px;
     margin: 0px 10px;
+    align-content: center;
 
    .section-image{
        border-radius: 100px;
@@ -10,5 +11,10 @@
        background-size: cover;
        background-position: center;
        margin: 20px 0px;
+   }
+   .take-quiz{
+       align-self: center;
+       outline: none;
+       text-decoration: none;
    }
 }
