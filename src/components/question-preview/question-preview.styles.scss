@@ -1,0 +1,21 @@
+.quiz-question {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 150px;
+
+  .question-text {
+    text-align: center;
+    border-radius: 20px;
+    width: 500px;
+  }
+  .some-space {
+    width: 22.5px;
+    height: 22.5px;
+  }
+}
+
+.question-count {
+  text-align: right;
+  margin-right: 22.5px;
+}

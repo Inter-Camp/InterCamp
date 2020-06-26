@@ -1,19 +1,14 @@
 import React from "react";
 import "./quiz-page.styles.scss";
+import QuestionPreview from '../../components/question-preview/question-preview.component';
 
 const QuizPage = ({ match }) => {
   console.log(match);
+  const id = match.params.quizId;
   return (
     <div className="quiz-page">
-      <h1>Welcome to {match.params.quizId.toUpperCase()} Challenge</h1>
-      <p>Question #1</p>
-      <div className="quiz-question">
-        <div className="arrow">&#9665;</div>
-        <div className="question-text">
-          <p>A Question</p>
-        </div>
-        <div className="arrow">&#9655;</div>
-      </div>
+      <h1>Welcome to {id.toUpperCase()} Challenge</h1>
+      <QuestionPreview quizId={id}/>
     </div>
   );
 };

@@ -11,9 +11,15 @@ const QUIZ_DATA = {
             },
             {
                 id: 2,
-                question: 'What are some differences between function Expressions and Function Declarations?',
+                question: 'What are some differences between Function Expressions and Function Declarations?',
                 answer: 'Function declarations load before any code is executed while Function expressions load only when the interpreter reaches that line of code.'
+            },
+            {
+                id: 3,
+                question: `What is the significance, and what are the benefits, of including 'use strict' at the beginning of a JavaScript source file?`,
+                answer: 'The short and most important answer here is that use strict is a way to voluntarily enforce stricter parsing and error handling on your JavaScript code at runtime. Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. In general, it is a good practice.' 
             }
+
         ]
     },
     html: {
