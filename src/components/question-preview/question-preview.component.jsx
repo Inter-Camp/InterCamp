@@ -1,6 +1,7 @@
 import React from "react";
 import "./question-preview.styles.scss";
-import QUIZ_DATA from "../../quiz.data";
+// import QUIZ_DATA from "../../quiz.data";
+import { connect } from "react-redux";
 
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
@@ -8,31 +9,34 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
-
-
 class QuestionPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       count: 0,
+      quizId: this.props.quizId,
     };
   }
 
   totalQuestions = () => {
-    return QUIZ_DATA[this.props.quizId].questions.length - 1;
+    return this.props.questions.length - 1; //3
   };
 
   nextQuestion = () => {
-    this.setState({ count: (this.state.count += 1) });
+    this.setState((state) => {
+      return { count: state.count + 1 };
+    });
   };
 
   prevQuestion = () => {
-    this.setState({ count: (this.state.count -= 1) });
+    this.setState((state) => {
+      return { count: state.count - 1 };
+    });
   };
 
   render() {
-    const { questions, id } = QUIZ_DATA[this.props.quizId];
     const { count } = this.state;
+    const { questions } = this.props;
     return (
       <div className="quiz-container">
         <h3 className="question-count">Question #{count + 1}</h3>
@@ -49,7 +53,7 @@ class QuestionPreview extends React.Component {
 
           <Card className="question-text">
             <CardContent>
-              <Typography gutterBottom variant="body1" component="h1" key={id}>
+              <Typography gutterBottom variant="body1" component="h1" key={25}>
                 {questions[count].question}
               </Typography>
             </CardContent>
@@ -70,4 +74,10 @@ class QuestionPreview extends React.Component {
   }
 }
 
-export default QuestionPreview;
+const mapStateToProps = (state, ownProps) => {
+  const propQuiz = ownProps.quizId;
+  const quiz = state.quiz.questions[propQuiz];
+  return { questions: quiz.questions };
+};
+
+export default connect(mapStateToProps)(QuestionPreview);
