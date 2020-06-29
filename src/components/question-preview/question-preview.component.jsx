@@ -41,7 +41,7 @@ class QuestionPreview extends React.Component {
     // console.log(questions);
     return (
       <div className="quiz-container">
-        <h3 className="question-count">Question #{count + 1}</h3>
+        <h3 className="question-count">Question #{count + 1}/{this.totalQuestions() + 1}</h3>
         <div className="quiz-question">
           {count > 0 ? (
             <ArrowBack onClick={this.prevQuestion}></ArrowBack>
@@ -61,12 +61,18 @@ class QuestionPreview extends React.Component {
           <CustomButton onClick={this.showTheAnswer}>
             {this.state.showTheAnswer ? "hide the answer" : "show the answer"}
           </CustomButton>
-          <CustomButton color="primary"
-          >Add to Favorite</CustomButton>
+          <CustomButton color="primary">Add to Favorite</CustomButton>
         </div>
         {this.state.showTheAnswer && (
           <div className="quiz-question quiz-answer">
-            <CardComponent>{questions[count].answer}</CardComponent>
+            <CardComponent>
+              {questions[count].answer.split("\n").map((item) => (
+                <span>
+                  {item}
+                  <br />
+                </span>
+              ))}
+            </CardComponent>
           </div>
         )}
       </div>

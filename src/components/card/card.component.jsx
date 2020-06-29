@@ -8,7 +8,7 @@ export const CardComponent = ({ id, children }) => {
   return (
     <Card className="question-text">
       <CardContent>
-        <Typography gutterBottom variant="body1" component="h1" key={id}>
+        <Typography display="inline" gutterBottom variant="body1" component="h1" key={id}>
           {children}
         </Typography>
       </CardContent>

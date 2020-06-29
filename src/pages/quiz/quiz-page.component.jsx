@@ -2,7 +2,7 @@ import React from "react";
 import "./quiz-page.styles.scss";
 import QuestionPreview from "../../components/question-preview/question-preview.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
-import { ExitIcon } from "../../components/icons/return-icon.component";
+import { ExitIcon } from "../../components/icons/exit-icon.component";
 import { Link } from "react-router-dom";
 
 const QuizPage = ({ match }) => {
