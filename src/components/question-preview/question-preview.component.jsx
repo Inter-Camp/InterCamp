@@ -2,17 +2,16 @@ import React from "react";
 import "./question-preview.styles.scss";
 import { connect } from "react-redux";
 
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
+import { ArrowForward, ArrowBack } from "../icons/arrows.component";
+import CustomButton from "../custom-button/custom-button.component";
+import { CardComponent } from "../card/card.component";
 
 class QuestionPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       count: 0,
+      showTheAnswer: false,
     };
   }
 
@@ -22,59 +21,61 @@ class QuestionPreview extends React.Component {
 
   nextQuestion = () => {
     this.setState((state) => {
-      return { count: state.count + 1 };
+      return { count: state.count + 1, showTheAnswer: false };
     });
   };
 
   prevQuestion = () => {
     this.setState((state) => {
-      return { count: state.count - 1 };
+      return { count: state.count - 1, showTheAnswer: false };
     });
+  };
+
+  showTheAnswer = () => {
+    this.setState({ showTheAnswer: !this.state.showTheAnswer });
   };
 
   render() {
     const { count } = this.state;
     const { questions } = this.props;
+    // console.log(questions);
     return (
       <div className="quiz-container">
         <h3 className="question-count">Question #{count + 1}</h3>
         <div className="quiz-question">
           {count > 0 ? (
-            <ArrowBackIcon
-              className="arrow"
-              color="primary"
-              onClick={this.prevQuestion}
-            ></ArrowBackIcon>
+            <ArrowBack onClick={this.prevQuestion}></ArrowBack>
           ) : (
             <div className="some-space"></div>
           )}
 
-          <Card className="question-text">
-            <CardContent>
-              <Typography gutterBottom variant="body1" component="h1" key={25}>
-                {questions[count].question}
-              </Typography>
-            </CardContent>
-          </Card>
+          <CardComponent>{questions[count].question}</CardComponent>
 
           {count < this.totalQuestions() ? (
-            <ArrowForwardIcon
-              className="arrow"
-              color="primary"
-              onClick={this.nextQuestion}
-            ></ArrowForwardIcon>
+            <ArrowForward onClick={this.nextQuestion}></ArrowForward>
           ) : (
             <div className="some-space"></div>
           )}
         </div>
+        <div className="quiz-buttons">
+          <CustomButton onClick={this.showTheAnswer}>
+            {this.state.showTheAnswer ? "hide the answer" : "show the answer"}
+          </CustomButton>
+          <CustomButton color="primary"
+          >Add to Favorite</CustomButton>
+        </div>
+        {this.state.showTheAnswer && (
+          <div className="quiz-question quiz-answer">
+            <CardComponent>{questions[count].answer}</CardComponent>
+          </div>
+        )}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const propQuiz = ownProps.quizId;
-  const quiz = state.quiz.questions[propQuiz];
+  const quiz = state.quiz.questions[ownProps.quizId];
   return { questions: quiz.questions };
 };
 

@@ -1,11 +1,14 @@
-import { Button } from "@material-ui/core";
 import React from "react";
+import { Button } from "@material-ui/core";
 
-const CustomButton = ({ children }) => {
+const CustomButton = ({ children, onClick, color }) => {
   return (
-      <Button variant="outlined" color="primary">
-        {children}
-      </Button>
+    <Button 
+    variant="contained" 
+    color={color}
+    onClick={onClick}>
+      {children}
+    </Button>
   );
 };
 

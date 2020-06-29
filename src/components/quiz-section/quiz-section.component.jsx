@@ -12,7 +12,7 @@ const QuizSection = ({ id, imageUrl, linkUrl }) => {
       ></div>
 
       <Link className="go-to-quiz" to={linkUrl}>
-        <CustomButton>Take a Quiz</CustomButton>
+        <CustomButton color="primary">Take a Quiz</CustomButton>
       </Link>
     </div>
   );
