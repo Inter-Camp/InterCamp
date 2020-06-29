@@ -1,6 +1,5 @@
 import React from "react";
 import "./question-preview.styles.scss";
-// import QUIZ_DATA from "../../quiz.data";
 import { connect } from "react-redux";
 
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
@@ -14,7 +13,6 @@ class QuestionPreview extends React.Component {
     super(props);
     this.state = {
       count: 0,
-      quizId: this.props.quizId,
     };
   }
 

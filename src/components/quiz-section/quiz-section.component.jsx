@@ -1,6 +1,6 @@
 import React from "react";
 import "./quiz-section.styles.scss";
-import { Button } from "@material-ui/core";
+import CustomButton from "../custom-button/custom-button.component";
 import { Link } from "react-router-dom";
 
 const QuizSection = ({ id, imageUrl, linkUrl }) => {
@@ -12,9 +12,7 @@ const QuizSection = ({ id, imageUrl, linkUrl }) => {
       ></div>
 
       <Link className="go-to-quiz" to={linkUrl}>
-        <Button className="button" variant="outlined" color="primary">
-          Take a Quiz
-        </Button>
+        <CustomButton>Take a Quiz</CustomButton>
       </Link>
     </div>
   );
