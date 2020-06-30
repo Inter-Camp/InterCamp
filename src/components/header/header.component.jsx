@@ -4,21 +4,21 @@ import "./header.styles.scss";
 import Logo from "../../assets/logo.png";
 import { Button } from "@material-ui/core";
 
-
 const Header = () => {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
-        <img className="logo-image" src={Logo} alt="website logo" />
+        <div className="logo-image-container">
+          <img className="logo-image" src={Logo} alt="website logo" />
+        </div>
         <h3 className="website-name">InterCamp</h3>
       </Link>
-      <div className="buttons-container">
+      <div className="button-container">
         <Link className="option" to="/signin">
           <Button color="primary" variant="outlined">
             SIGN IN
           </Button>
         </Link>
-        
       </div>
     </div>
   );
