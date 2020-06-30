@@ -1,0 +1,28 @@
+.our-pros {
+  @mixin box-shadow($x, $y, $blur, $z, $c) {
+    -webkit-box-shadow: $x $y $blur $z $c;
+    -moz-box-shadow: $x $y $blur $z $c;
+    -ms-box-shadow: $x $y $blur $z $c;
+    box-shadow: $x $y $blur $z $c;
+  }
+
+  background-color: white;
+  width: 220px;
+  height: 330px;
+  @include box-shadow (0px, 2px, 4px, -1px, rgb(23, 18, 71));
+
+  .our-pros-image-conatiner {
+    width: 100%;
+    padding: 10px;
+  }
+  .our-pros-image {
+    width: 100%;
+  }
+  .our-pros-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+    text-align: center;
+  }
+}
