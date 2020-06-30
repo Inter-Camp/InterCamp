@@ -1,0 +1,25 @@
+.options-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0px;
+
+  .sign-in-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    width: 240px;
+  }
+
+  .continue-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    width: 240px;
+  }
+}
+.home-best-text {
+  text-align: center;
+}
