@@ -1,4 +1,18 @@
-.quiz-s-preview{
+body {
+  font-family: "Open Sans Condensed", sans-serif;
+  padding: 20px 60px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.quiz-s-preview {
   display: flex;
   justify-content: space-around;
   margin: 0px auto;
