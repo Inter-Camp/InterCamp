@@ -1,6 +1,7 @@
 import React from "react";
 import "./sign-in.styles.scss";
 import CustomButton from "../custom-button/custom-button.component";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -12,7 +13,7 @@ const SignIn = () => {
       <div className="options-container">
         <div className="sign-in-options">
           <CustomButton color="primary">Sign in with Google</CustomButton>
-          <CustomButton color="primary">Sign in with Google</CustomButton>
+          <CustomButton>Sign in with Facebook</CustomButton>
           <CustomButton color="primary">Sign in with Google</CustomButton>
         </div>
         <div className="continue-options">
@@ -22,7 +23,9 @@ const SignIn = () => {
           </div>
           <span> Create your own quizzes; No </span>
 
-          <CustomButton>CONTINUE AS GUEST</CustomButton>
+          <Link to="./quiz">
+            <CustomButton>CONTINUE AS GUEST</CustomButton>
+          </Link>
         </div>
       </div>
     </div>
