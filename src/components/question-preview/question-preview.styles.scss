@@ -1,4 +1,4 @@
-@mixin box-shadow($x, $y, $blur, $z, $c){ 
+@mixin box-shadow($x, $y, $blur, $z, $c) {
   -webkit-box-shadow: $x $y $blur $z $c;
   -moz-box-shadow: $x $y $blur $z $c;
   -ms-box-shadow: $x $y $blur $z $c;
@@ -10,12 +10,22 @@
   align-items: center;
   display: flex;
   margin: 20px auto;
- 
+
   .question-text {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
     width: 500px;
-    @include box-shadow (0px, 1px, 4px, -1px, rgb(23, 18, 71));
+    min-height: 100px;
+    padding: 30px 20px;
+    @include box-shadow(0px, 1px, 4px, -1px, rgb(23, 18, 71));
+
+    .MuiCardContent-root:last-child {
+      padding: 0;
+    }
   }
+
   .some-space {
     width: 22.5px;
     height: 22.5px;
