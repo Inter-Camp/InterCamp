@@ -7,7 +7,7 @@ import ImageTwo from "../../assets/home.people.copy.jpg";
 import ImageThree from "../../assets/home.programmer.jpg";
 
 import CustomButton from "../custom-button/custom-button.component";
-import { Button } from "@material-ui/core";
+import { CustomButtonOutlined } from "../custom-button/custom-button.component";
 
 import OurProsCard from "../our-pros-card/our-pros.component";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
@@ -33,14 +33,10 @@ const About = () => {
             for upcomming intrviews
           </p>
           <div className="sign-in-container">
-            <Link className="go-to-quiz" to="/">
-              <CustomButton color="primary">SIGN IN</CustomButton>
-            </Link>
-            <Link className="option" to="/quiz">
-              <Button color="primary" variant="outlined">
-                CONTINUE AS GUEST
-              </Button>
-            </Link>
+            <a href="#sign-in">
+              <CustomButton color="primary">Get Started</CustomButton>
+            </a>
+            
           </div>
         </div>
       </div>

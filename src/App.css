@@ -5,6 +5,9 @@ body {
   max-width: 1200px;
 
 }
+html{
+  scroll-behavior: smooth;
+}
 
 a {
   text-decoration: none;

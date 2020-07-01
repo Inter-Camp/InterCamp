@@ -1,24 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import "./header.styles.scss";
 import Logo from "../../assets/logo.png";
-import { Button } from "@material-ui/core";
+import { CustomButtonOutlined } from "../custom-button/custom-button.component";
 
-const Header = () => {
+import { auth } from "../../firebase/firebas.utils";
+
+const Header = ({ currentUser }) => {
+  const history = useHistory();
   return (
     <div className="header">
-      <Link className="logo-container" to="/">
+      <Link className="logo-container" to={currentUser ? "/quiz" : "./"}>
         <div className="logo-image-container">
           <img className="logo-image" src={Logo} alt="website logo" />
         </div>
         <h3 className="website-name">InterCamp</h3>
       </Link>
       <div className="button-container">
-        <Link className="option" to="/signin">
-          <Button color="primary" variant="outlined">
-            SIGN IN
-          </Button>
-        </Link>
+        {currentUser ? (
+            <CustomButtonOutlined onClick={() => {
+              auth
+              .signOut();
+            }}>
+              SIGN OUT
+            </CustomButtonOutlined>
+        ) : (
+          <a href="#sign-in">
+            <CustomButtonOutlined>SIGN IN</CustomButtonOutlined>
+          </a>
+        )}
       </div>
     </div>
   );
