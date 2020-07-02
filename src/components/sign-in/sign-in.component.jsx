@@ -3,7 +3,11 @@ import "./sign-in.styles.scss";
 import CustomButton from "../custom-button/custom-button.component";
 import { Link } from "react-router-dom";
 
-import { signInWithGoogle } from "../../firebase/firebas.utils";
+import {
+  signInWithGoogle,
+  signInWithFacebook,
+  signInWithGitHub,
+} from "../../firebase/firebas.utils";
 
 const SignIn = () => {
   return (
@@ -14,11 +18,15 @@ const SignIn = () => {
 
       <div className="options-container">
         <div className="sign-in-options">
-            <CustomButton color="primary" onClick={signInWithGoogle}>
-              Sign in with Google
-            </CustomButton>
-          <CustomButton>Sign in with Facebook</CustomButton>
-          <CustomButton color="primary">Sign in with GitHub</CustomButton>
+          <CustomButton color="primary" onClick={signInWithGoogle}>
+            Sign in with Google
+          </CustomButton>
+          <CustomButton onClick={signInWithFacebook}>
+            Sign in with Facebook
+          </CustomButton>
+          <CustomButton onClick={signInWithGitHub}>
+            Sign in with GitHub
+          </CustomButton>
         </div>
         <div className="continue-options">
           <span>Limited access.</span>
@@ -28,7 +36,9 @@ const SignIn = () => {
           <span> Create your own quizzes; No </span>
 
           <Link to="./quiz">
-            <CustomButton>CONTINUE AS GUEST</CustomButton>
+            <CustomButton >
+              CONTINUE AS GUEST
+            </CustomButton>
           </Link>
         </div>
       </div>
