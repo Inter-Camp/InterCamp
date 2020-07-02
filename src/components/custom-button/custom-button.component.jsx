@@ -1,9 +1,16 @@
 import React from "react";
 import { Button } from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import FacebookIcon from "@material-ui/icons/Facebook";
 
-const CustomButton = ({ children, onClick, color }) => {
+export const CustomButton = ({ children, onClick, color }) => {
   return (
-    <Button variant="contained" color={color} onClick={onClick}>
+    <Button
+      className="custom-button"
+      variant="contained"
+      color={color}
+      onClick={onClick}
+    >
       {children}
     </Button>
   );
@@ -17,4 +24,28 @@ export const CustomButtonOutlined = ({ children, onClick }) => {
   );
 };
 
-export default CustomButton;
+export const GitHubSignInButton = ({ onClick }) => {
+  return (
+    <Button
+      variant="contained"
+      color="default"
+      onClick={onClick}
+      startIcon={<GitHubIcon />}
+    >
+      Sign in with GitHub
+    </Button>
+  );
+};
+
+export const FBSignInButton = ({ onClick }) => {
+  return (
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={onClick}
+      startIcon={<FacebookIcon fontSize="large" />}
+    >
+      Sign in with Facebook
+    </Button>
+  );
+};

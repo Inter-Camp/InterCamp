@@ -1,6 +1,10 @@
 import React from "react";
 import "./sign-in.styles.scss";
-import CustomButton from "../custom-button/custom-button.component";
+import {
+  CustomButton,
+  GitHubSignInButton,
+  FBSignInButton,
+} from "../custom-button/custom-button.component";
 import { Link } from "react-router-dom";
 
 import {
@@ -21,13 +25,10 @@ const SignIn = () => {
           <CustomButton color="primary" onClick={signInWithGoogle}>
             Sign in with Google
           </CustomButton>
-          <CustomButton onClick={signInWithFacebook}>
-            Sign in with Facebook
-          </CustomButton>
-          <CustomButton onClick={signInWithGitHub}>
-            Sign in with GitHub
-          </CustomButton>
+          <GitHubSignInButton onClick={signInWithGitHub} />
+          <FBSignInButton onClick={signInWithFacebook} />
         </div>
+        
         <div className="continue-options">
           <span>Limited access.</span>
           <div>
@@ -35,10 +36,8 @@ const SignIn = () => {
           </div>
           <span> Create your own quizzes; No </span>
 
-          <Link to="./quiz">
-            <CustomButton >
-              CONTINUE AS GUEST
-            </CustomButton>
+          <Link className="guest-link" to="./quiz">
+            <CustomButton>CONTINUE AS GUEST</CustomButton>
           </Link>
         </div>
       </div>
