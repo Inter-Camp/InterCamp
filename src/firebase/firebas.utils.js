@@ -22,6 +22,18 @@ export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 // trigger the pop-up from google provider
 provider.setCustomParameters({ prompt: "select_account" });
+
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+const fbprovider = new firebase.auth.FacebookAuthProvider();
+fbprovider.setCustomParameters({ prompt: "select_account" });
+
+export const signInWithFacebook = () => auth.signInWithPopup(fbprovider);
+
+var githubprovider = new firebase.auth.GithubAuthProvider();
+
+export const signInWithGitHub = () => auth.signInWithPopup(githubprovider);
+
+
 
 export default firebase;
