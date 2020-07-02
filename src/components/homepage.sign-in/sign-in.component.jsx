@@ -14,11 +14,9 @@ const SignIn = () => {
 
       <div className="options-container">
         <div className="sign-in-options">
-          <Link to="/quiz">
             <CustomButton color="primary" onClick={signInWithGoogle}>
               Sign in with Google
             </CustomButton>
-          </Link>
           <CustomButton>Sign in with Facebook</CustomButton>
           <CustomButton color="primary">Sign in with GitHub</CustomButton>
         </div>

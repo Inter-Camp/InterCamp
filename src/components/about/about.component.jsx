@@ -1,13 +1,11 @@
 import React from "react";
 import "./about.styles.scss";
-import { Link } from "react-router-dom";
 import Logo from "../../assets/home.programming.jpg";
 import Image from "../../assets/home.people.jpg";
 import ImageTwo from "../../assets/home.people.copy.jpg";
 import ImageThree from "../../assets/home.programmer.jpg";
 
 import CustomButton from "../custom-button/custom-button.component";
-import { CustomButtonOutlined } from "../custom-button/custom-button.component";
 
 import OurProsCard from "../our-pros-card/our-pros.component";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";

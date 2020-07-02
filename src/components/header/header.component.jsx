@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./header.styles.scss";
 import Logo from "../../assets/logo.png";
 import { CustomButtonOutlined } from "../custom-button/custom-button.component";
@@ -7,7 +7,6 @@ import { CustomButtonOutlined } from "../custom-button/custom-button.component";
 import { auth } from "../../firebase/firebas.utils";
 
 const Header = ({ currentUser }) => {
-  const history = useHistory();
   return (
     <div className="header">
       <Link className="logo-container" to={currentUser ? "/quiz" : "./"}>
