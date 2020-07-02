@@ -5,12 +5,12 @@ import Image from "../../assets/home.people.jpg";
 import ImageTwo from "../../assets/home.people.copy.jpg";
 import ImageThree from "../../assets/home.programmer.jpg";
 
-import CustomButton from "../custom-button/custom-button.component";
+import { CustomButton } from "../custom-button/custom-button.component";
 
 import OurProsCard from "../our-pros-card/our-pros.component";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import StarsIcon from '@material-ui/icons/Stars';
-import DateRangeIcon from '@material-ui/icons/DateRange';
+import StarsIcon from "@material-ui/icons/Stars";
+import DateRangeIcon from "@material-ui/icons/DateRange";
 
 const About = () => {
   return (
@@ -34,7 +34,6 @@ const About = () => {
             <a href="#sign-in">
               <CustomButton color="primary">Get Started</CustomButton>
             </a>
-            
           </div>
         </div>
       </div>
@@ -47,10 +46,10 @@ const About = () => {
           Create your own quizzes
         </OurProsCard>
         <OurProsCard
-        image={ImageThree}
-        icon={<StarsIcon color="secondary" fontSize="large"/>}
+          image={ImageThree}
+          icon={<StarsIcon color="secondary" fontSize="large" />}
         >
-            Get back to your favorite questions
+          Get back to your favorite questions
         </OurProsCard>
         <OurProsCard
           image={ImageTwo}

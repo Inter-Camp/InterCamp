@@ -1,6 +1,8 @@
 .options-container {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   margin-top: 40px;
   margin-bottom: 80px;
@@ -14,11 +16,20 @@
   }
 
   .continue-options {
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 140px;
     width: 240px;
+    .guest-link {
+      width: 100%;
+      display: block;
+      .custom-button{
+        width: 100%;
+      }
+    }
+    
   }
 }
 .home-best-text {

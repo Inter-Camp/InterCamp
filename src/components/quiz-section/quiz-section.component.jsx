@@ -1,6 +1,6 @@
 import React from "react";
 import "./quiz-section.styles.scss";
-import CustomButton from "../custom-button/custom-button.component";
+import { CustomButton } from "../custom-button/custom-button.component";
 import { Link } from "react-router-dom";
 
 const QuizSection = ({ imageUrl, linkUrl }) => {

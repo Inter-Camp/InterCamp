@@ -3,7 +3,7 @@ import "./question-preview.styles.scss";
 import { connect } from "react-redux";
 
 import { ArrowForward, ArrowBack } from "../icons/arrows.component";
-import CustomButton from "../custom-button/custom-button.component";
+import { CustomButton } from "../custom-button/custom-button.component";
 import { CardComponent } from "../card/card.component";
 
 class QuestionPreview extends React.Component {
@@ -41,7 +41,9 @@ class QuestionPreview extends React.Component {
     // console.log(questions);
     return (
       <div className="quiz-container">
-        <h3 className="question-count">Question #{count + 1}/{this.totalQuestions() + 1}</h3>
+        <h3 className="question-count">
+          Question #{count + 1}/{this.totalQuestions() + 1}
+        </h3>
         <div className="quiz-question">
           {count > 0 ? (
             <ArrowBack onClick={this.prevQuestion}></ArrowBack>
