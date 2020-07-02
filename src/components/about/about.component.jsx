@@ -28,7 +28,7 @@ const About = () => {
           <h3>HTML, CSS, JavaScript, React</h3>
           <p>
             Most common interview theory questions. Check yourself and prepare
-            for upcomming intrviews
+            for upcomming interviews
           </p>
           <div className="sign-in-container">
             <a href="#sign-in">
