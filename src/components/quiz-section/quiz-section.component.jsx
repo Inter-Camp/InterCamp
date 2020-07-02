@@ -3,7 +3,7 @@ import "./quiz-section.styles.scss";
 import CustomButton from "../custom-button/custom-button.component";
 import { Link } from "react-router-dom";
 
-const QuizSection = ({ id, imageUrl, linkUrl }) => {
+const QuizSection = ({ imageUrl, linkUrl }) => {
   return (
     <div className="section-container">
       <div
