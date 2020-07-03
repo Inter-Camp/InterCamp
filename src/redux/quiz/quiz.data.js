@@ -17,10 +17,12 @@ Inevitably, this means that no matter where functions and variables are declar
                     "What are some differences between Function Expressions and Function Declarations?",
                 answer: `Example: Function Expression
 alert(foo());
+
 // ERROR! foo wasn't loaded yet
 var foo = function() { return 5; }
 Example: Function Declaration
 alert(foo());
+
 // Alerts 5. Declarations are loaded
 before any code can run.
 function foo() { return 5; };
@@ -31,6 +33,7 @@ Function declarations load before any code is executed while Function expressi
                 id: 113,
                 question: `What is the significance, and what are the benefits, of including 'use strict' at the beginning of a JavaScript source file?`,
                 answer: `The short and most important answer here is that use strict is a way to voluntarily enforce stricter parsing and error handling on your JavaScript code at runtime.
+
 Code errors that would otherwise have been ignored or would have failed silently will now generate errors or throw exceptions. In general, it is a good practice.",
         `
             },
@@ -38,6 +41,7 @@ Code errors that would otherwise have been ignored or would have failed silently
                 id: 114,
                 question: `What is Lexical Scope?`,
                 answer: `Lexical scope means that in a nested group of functions, the inner functions have access to the variables and other resources of their parent scope.
+
 This means that the child functions are lexically bound to the execution context of their parents. Lexical scope is sometimes also referred to as static scope.
         `
             },
@@ -45,7 +49,6 @@ This means that the child functions are lexically bound to the execution conte
                 id: 115,
                 question: `What is a closure?`,
                 answer: `A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables — a scope chain.
-
 The closure has three scope chains:
 it has access to its own scope — variables defined between its curly brackets
 it has access to the outer function’s variables
@@ -56,14 +59,14 @@ it has access to the global variables
                 id: 116,
                 question: `In how many ways can you create an array in JS?`,
                 answer: `Answer: There are three different ways of creating an array in JavaScript, namely:
-
-1. By creating instance of an array:
+1.
+By creating instance of an array:
 var someArray = new Array();
-
-2. By using an array constructor:
+2.
+By using an array constructor:
 var someArray = new Array(‘value1’, ‘value2’,…, ‘valueN’);
-
-3. By using an array literal:
+3.
+By using an array literal:
 var someArray = [value1, value2,…., valueN];`
             },
             {
@@ -73,9 +76,7 @@ var someArray = [value1, value2,…., valueN];`
 
 (function () {
 return () } () ;
-        
 They are also known as ‘Immediately Invoked Function Expressions’ or ‘Self Executing Anonymous Functions’.
-
 These functions are invoked automatically in the code, hence they are named as ‘Self Invoking Functions’.
 Usually, we define a function and invoke it, but if we want to execute a function automatically where it is explained, and if we are not going to call it again, we can use anonymous functions.`
             },
@@ -83,11 +84,11 @@ Usually, we define a function and invoke it, but if we want to execute a functio
                 id: 118,
                 question: `What is the difference between ‘==’ and ‘===’?`,
                 answer: `Both ‘==’ and ‘===’ are comparison operators.
-
-'==' operator is also knows as 'Type Converting Operator
+'=='
+operator is also knows as 'Type Converting Operator
 It compares Value, do not compare type
-        
-‘===’ operator is known as ‘Strict Equality Operator’
+‘===’
+operator is known as ‘Strict Equality Operator’
 It compares both value and type.`
             },
             {
@@ -133,7 +134,7 @@ The start of the comment is denoted by
                 id: 203,
                 question: `What’s the difference between a block-level element and an inline element?`,
                 answer: `Each element in HTML is displayed in one of a few ways. By default, most tags are either displayed as block-level or inline. This value can be overridden using CSS.
-                
+
 Block
 As the name suggests, a block-level element is drawn as a block that stretches to fill the full width available to it (the width of its container) and will always start on a new line.
 <div>, <img>, <section>, <form>, <nav>.
@@ -203,7 +204,6 @@ They are basically used as a replacement of flash player and Silverlight to play
                 answer: `The CSS box model is used to define the design and layout of elements of CSS.
 
 The elements are:
-                
 Margin - It removes the area around the border. It is transparent.
 Border - It represents the area around the padding
 Padding - It removes the area around the content. It is transparent.
@@ -219,9 +219,8 @@ It is done by using different flexible layouts and grids.`
                 id: 306,
                 question: `What is CSS specificity?`,
                 answer: `CSS specificity is a score or rank that decides which style declaration has to be used to an element. (*) this universal selector has low specificity while ID selectors have high specificity.
-
 There are four categories in CSS which authorize the specificity level of the selector.
-                
+
 Inline style
 IDs
 Classes, Attributes, and pseudo-classes.
@@ -231,7 +230,8 @@ Elements and pseudo-elements.`
                 id: 307,
                 question: `How will you add border images to an HTML element?`,
                 answer: `We can set the image to be used as the border-image alongside an element by using the property of CSS “border-image”.
-#borderimg {
+
+#bordering {
 border: 15px solid transparent;
 padding: 20px;
 border-image: url(border.png) 30 round;
@@ -247,6 +247,7 @@ It means, if we write left:10px then the result will be 10px far from the left e
                 id: 309,
                 question: `How is the concept of inheritance applied in CSS?`,
                 answer: `Inheritance is a concept in which the child class will inherit the properties of its parent class. It is a concept which is been used in many languages and is the easy way of defining the same property again.
+
 It is used in CSS to define the hierarchy from the top level to the bottom level. Inherited properties can be overridden by the children's class if the child uses the same name.`
             },
             {

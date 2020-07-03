@@ -37,7 +37,7 @@ class QuestionPreview extends React.Component {
 
   render() {
     const { count } = this.state;
-    const { questions } = this.props;
+    const { questions, currentUser } = this.props;
     // console.log(questions);
     return (
       <div className="quiz-container">
@@ -63,13 +63,15 @@ class QuestionPreview extends React.Component {
           <CustomButton onClick={this.showTheAnswer}>
             {this.state.showTheAnswer ? "hide the answer" : "show the answer"}
           </CustomButton>
-          <CustomButton color="primary">Add to Favorite</CustomButton>
+          {currentUser ? (
+            <CustomButton color="primary">Add to Favorite</CustomButton>
+          ) : null}
         </div>
         {this.state.showTheAnswer && (
           <div className="quiz-question quiz-answer">
             <CardComponent>
-              {questions[count].answer.split("\n").map((item) => (
-                <span key={count}>
+              {questions[count].answer.split("\n").map((item, i) => (
+                <span key={item + i}>
                   {item}
                   <br />
                 </span>
@@ -84,7 +86,10 @@ class QuestionPreview extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const quiz = state.quiz.questions[ownProps.quizId];
-  return { questions: quiz.questions };
+  return {
+    questions: quiz.questions,
+    currentUser: state.user.currentUser,
+  };
 };
 
 export default connect(mapStateToProps)(QuestionPreview);
