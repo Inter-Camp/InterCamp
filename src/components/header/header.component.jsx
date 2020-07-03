@@ -4,10 +4,11 @@ import "./header.styles.scss";
 import Logo from "../../assets/logo.png";
 import { CustomButtonOutlined } from "../custom-button/custom-button.component";
 
+import { connect } from "react-redux";
+
 import { auth } from "../../firebase/firebas.utils";
 
 const Header = ({ currentUser }) => {
-  console.log(currentUser);
   return (
     <div className="header">
       <Link className="logo-container" to={currentUser ? "/quiz" : "/"}>
@@ -18,12 +19,13 @@ const Header = ({ currentUser }) => {
       </Link>
       <div className="button-container">
         {currentUser ? (
-            <CustomButtonOutlined onClick={() => {
-              auth
-              .signOut();
-            }}>
-              SIGN OUT
-            </CustomButtonOutlined>
+          <CustomButtonOutlined
+            onClick={() => {
+              auth.signOut();
+            }}
+          >
+            SIGN OUT
+          </CustomButtonOutlined>
         ) : (
           <a href="#sign-in">
             <CustomButtonOutlined>SIGN IN</CustomButtonOutlined>
@@ -33,4 +35,8 @@ const Header = ({ currentUser }) => {
     </div>
   );
 };
-export default Header;
+
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+export default connect(mapStateToProps)(Header);
