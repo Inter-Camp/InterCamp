@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./header.styles.scss";
 import Logo from "../../assets/logo.png";
 import { CustomButtonOutlined } from "../custom-button/custom-button.component";
+import { AccountIcon } from "../icons/account-icon.component";
 
 import { connect } from "react-redux";
 
-import { auth } from "../../firebase/firebas.utils";
 
 const Header = ({ currentUser }) => {
   return (
@@ -19,14 +19,11 @@ const Header = ({ currentUser }) => {
       </Link>
       <div className="button-container">
         {currentUser ? (
-          <CustomButtonOutlined
-            onClick={() => {
-              auth.signOut();
-            }}
-          >
-            SIGN OUT
-          </CustomButtonOutlined>
+          <Link to={"/user"}>
+            <AccountIcon />
+          </Link>
         ) : (
+          
           <a href="#sign-in">
             <CustomButtonOutlined>SIGN IN</CustomButtonOutlined>
           </a>
