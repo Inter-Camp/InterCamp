@@ -1,6 +1,7 @@
 import React from "react";
 import "./question-preview.styles.scss";
 import { connect } from "react-redux";
+import { addFavorite } from "../../redux/quiz/quiz.actions";
 
 import { ArrowForward, ArrowBack } from "../icons/arrows.component";
 import { CustomButton } from "../custom-button/custom-button.component";
@@ -37,7 +38,7 @@ class QuestionPreview extends React.Component {
 
   render() {
     const { count } = this.state;
-    const { questions, currentUser } = this.props;
+    const { questions, currentUser, addFavorite } = this.props;
     // console.log(questions);
     return (
       <div className="quiz-container">
@@ -64,7 +65,7 @@ class QuestionPreview extends React.Component {
             {this.state.showTheAnswer ? "hide the answer" : "show the answer"}
           </CustomButton>
           {currentUser ? (
-            <CustomButton color="primary">Add to Favorite</CustomButton>
+            <CustomButton color="primary" onClick={() => addFavorite(questions[count])}>Add to Favorite</CustomButton>
           ) : null}
         </div>
         {this.state.showTheAnswer && (
@@ -86,10 +87,14 @@ class QuestionPreview extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const quiz = state.quiz.questions[ownProps.quizId];
+  console.log(ownProps);
   return {
     questions: quiz.questions,
     currentUser: state.user.currentUser,
   };
 };
 
-export default connect(mapStateToProps)(QuestionPreview);
+const mapDispathToProps = (dispatch) => ({
+  addFavorite: (item) => {console.log(item); dispatch(addFavorite(item))}
+});
+export default connect(mapStateToProps,mapDispathToProps)(QuestionPreview);
