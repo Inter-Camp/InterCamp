@@ -284,7 +284,16 @@ Normalize you might call a CSS reset alternative. Instead of wiping out all styl
                 answer: `React answer`
             },
         ]
+    },
+    favorite: {
+        id: 5,
+        title: "favorite",
+        routename: "favorite",
+        questions: [
+        ]
     }
+
+
 };
 
 export default QUIZ_DATA;
