@@ -11,7 +11,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebas.utils";
 function App() {
   const history = useHistory();
   const [currentUser, setCurrentUser] = useState(null);
-  // console.log(currentUser);
+  console.log(currentUser);
   useEffect(() => {
     const unsubscibeFromAuth = auth.onAuthStateChanged(async userAuth => {
       // check if there is a user
@@ -27,7 +27,7 @@ function App() {
         });
         history.push('/quiz');
       } else {
-        setCurrentUser({ userAuth })
+        setCurrentUser(null)
         history.push('/');
       }
     });

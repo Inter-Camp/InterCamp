@@ -69,7 +69,7 @@ class QuestionPreview extends React.Component {
           <div className="quiz-question quiz-answer">
             <CardComponent>
               {questions[count].answer.split("\n").map((item) => (
-                <span>
+                <span key={count}>
                   {item}
                   <br />
                 </span>
