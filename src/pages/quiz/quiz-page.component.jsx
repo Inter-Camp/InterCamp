@@ -6,7 +6,7 @@ import { ExitIcon } from "../../components/icons/exit-icon.component";
 import { Link } from "react-router-dom";
 
 const QuizPage = ({ match }) => {
-  // console.log(match);
+  console.log(match);
   const id = match.params.quizId;
   return (
     <div className="quiz-page">
