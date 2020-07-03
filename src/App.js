@@ -8,6 +8,7 @@ import ChooseQuizPage from "./pages/choose-quiz/choose-quiz.component";
 import HomePage from "./pages/home/home-page.component";
 import QuizPage from "./pages/quiz/quiz-page.component";
 import Header from "./components/header/header.component";
+import UserPage from './pages/user/user-page.component';
 import { auth, createUserProfileDocument } from "./firebase/firebas.utils";
 
 function App(props) {
@@ -35,6 +36,8 @@ function App(props) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
   return (
     <div>
       <Header />
@@ -42,6 +45,7 @@ function App(props) {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/quiz" component={ChooseQuizPage} />
         <Route path="/quiz/:quizId" component={QuizPage} />
+        <Route path="/user" component={UserPage}/>
       </Switch>
     </div>
   );
