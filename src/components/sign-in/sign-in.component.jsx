@@ -6,6 +6,7 @@ import {
   FBSignInButton,
 } from "../custom-button/custom-button.component";
 import { Link } from "react-router-dom";
+import { BlockIconIcon } from "../icons/block-icon.component";
 
 import {
   signInWithGoogle,
@@ -28,13 +29,25 @@ const SignIn = () => {
           <GitHubSignInButton onClick={signInWithGitHub} />
           <FBSignInButton onClick={signInWithFacebook} />
         </div>
-        
+
+        <h2 className="home-guest-text">
+          If you don't want to Sign In, you can continue as a Guest
+        </h2>
         <div className="continue-options">
-          <span>Limited access.</span>
-          <div>
-            <span> Your favourite questions; No </span>
+          <div className="limited-container">
+            <BlockIconIcon />
+            <span className="limited-text">
+              {" "}
+              Limited access to your favourite questions
+            </span>
           </div>
-          <span> Create your own quizzes; No </span>
+          <div className="limited-container">
+            <BlockIconIcon />
+            <span className="limited-text">
+              {" "}
+              No possibility to create your own quizzes
+            </span>
+          </div>
 
           <Link className="guest-link" to="./quiz">
             <CustomButton>CONTINUE AS GUEST</CustomButton>

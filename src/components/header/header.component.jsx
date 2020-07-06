@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link'
 import "./header.styles.scss";
 import Logo from "../../assets/logo.png";
 import { CustomButtonOutlined } from "../custom-button/custom-button.component";
 import { AccountIcon } from "../icons/account-icon.component";
 
 import { connect } from "react-redux";
-
 
 const Header = ({ currentUser }) => {
   return (
@@ -23,10 +23,9 @@ const Header = ({ currentUser }) => {
             <AccountIcon />
           </Link>
         ) : (
-          
-          <a href="#sign-in">
+          <HashLink to={"/#sign-in"}>
             <CustomButtonOutlined>SIGN IN</CustomButtonOutlined>
-          </a>
+          </HashLink>
         )}
       </div>
     </div>
