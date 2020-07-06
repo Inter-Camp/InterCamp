@@ -2,6 +2,8 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import FacebookIcon from "@material-ui/icons/Facebook";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 
 export const CustomButton = ({ children, onClick, color }) => {
   return (
@@ -12,6 +14,18 @@ export const CustomButton = ({ children, onClick, color }) => {
       onClick={onClick}
     >
       {children}
+    </Button>
+  );
+};
+
+export const BackToAllButton = ({ onClick }) => {
+  return (
+    <Button
+      color="primary"
+      onClick={onClick}
+      endIcon={<ExitToAppIcon />}
+    >
+      Back To All
     </Button>
   );
 };
