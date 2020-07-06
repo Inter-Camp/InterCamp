@@ -77,7 +77,9 @@ class QuestionPreview extends React.Component {
             >
               Add to Favorite
             </CustomButton>
-          ) : (
+          ) : null
+          }
+          {currentUser && !addToFav ? (
             <CustomButton
               color="primary"
               onClick={() => {
@@ -87,7 +89,7 @@ class QuestionPreview extends React.Component {
             >
               Delete From Favorite
             </CustomButton>
-          )}
+          ) : null}
         </div>
         {this.state.showTheAnswer && (
           <div className="quiz-question quiz-answer">
