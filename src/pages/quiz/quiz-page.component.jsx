@@ -2,21 +2,22 @@ import React from "react";
 import "./quiz-page.styles.scss";
 import QuestionPreview from "../../components/question-preview/question-preview.component";
 
-import { ExitIcon } from "../../components/icons/exit-icon.component";
+import { BackToAllButton } from '../../components/custom-button/custom-button.component';
 import { Link } from "react-router-dom";
 
 const QuizPage = ({ match }) => {
   console.log(match);
   const id = match.params.quizId;
+  const addToFav = true;
   return (
     <div className="quiz-page">
       <div className="button-container">
         <Link to={'/quiz'}>
-          <ExitIcon />
+          <BackToAllButton/>
         </Link>
       </div>
       <h1>Welcome to {id.toUpperCase()} Challenge</h1>
-      <QuestionPreview quizId={id} />
+      <QuestionPreview quizId={id} addToFav={addToFav}/>
     </div>
   );
 };

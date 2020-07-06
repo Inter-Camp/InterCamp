@@ -1,7 +1,7 @@
 import React from "react";
 import "./question-preview.styles.scss";
 import { connect } from "react-redux";
-import { addFavorite } from "../../redux/quiz/quiz.actions";
+import { addFavorite, deleteFavorite } from "../../redux/quiz/quiz.actions";
 
 import { ArrowForward, ArrowBack } from "../icons/arrows.component";
 import { CustomButton } from "../custom-button/custom-button.component";
@@ -38,8 +38,14 @@ class QuestionPreview extends React.Component {
 
   render() {
     const { count } = this.state;
-    const { questions, currentUser, addFavorite } = this.props;
-    // console.log(questions);
+    const {
+      questions,
+      currentUser,
+      addFavorite,
+      addToFav,
+      deleteFavorite,
+    } = this.props;
+    // console.log(questions[count].id);
     return (
       <div className="quiz-container">
         <h3 className="question-count">
@@ -64,9 +70,24 @@ class QuestionPreview extends React.Component {
           <CustomButton onClick={this.showTheAnswer}>
             {this.state.showTheAnswer ? "hide the answer" : "show the answer"}
           </CustomButton>
-          {currentUser ? (
-            <CustomButton color="primary" onClick={() => addFavorite(questions[count])}>Add to Favorite</CustomButton>
-          ) : null}
+          {currentUser && addToFav ? (
+            <CustomButton
+              color="primary"
+              onClick={() => addFavorite(questions[count])}
+            >
+              Add to Favorite
+            </CustomButton>
+          ) : (
+            <CustomButton
+              color="primary"
+              onClick={() => {
+                deleteFavorite(questions[count]);
+                this.prevQuestion();
+              }}
+            >
+              Delete From Favorite
+            </CustomButton>
+          )}
         </div>
         {this.state.showTheAnswer && (
           <div className="quiz-question quiz-answer">
@@ -87,7 +108,6 @@ class QuestionPreview extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   const quiz = state.quiz.questions[ownProps.quizId];
-  console.log(ownProps);
   return {
     questions: quiz.questions,
     currentUser: state.user.currentUser,
@@ -95,6 +115,12 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispathToProps = (dispatch) => ({
-  addFavorite: (item) => {console.log(item); dispatch(addFavorite(item))}
+  addFavorite: (item) => {
+    console.log(item);
+    dispatch(addFavorite(item));
+  },
+  deleteFavorite: (item) => {
+    dispatch(deleteFavorite(item));
+  },
 });
-export default connect(mapStateToProps,mapDispathToProps)(QuestionPreview);
+export default connect(mapStateToProps, mapDispathToProps)(QuestionPreview);
