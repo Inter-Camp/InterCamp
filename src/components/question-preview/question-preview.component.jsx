@@ -77,14 +77,15 @@ class QuestionPreview extends React.Component {
             >
               Add to Favorite
             </CustomButton>
-          ) : null
-          }
+          ) : null}
           {currentUser && !addToFav ? (
             <CustomButton
               color="primary"
               onClick={() => {
                 deleteFavorite(questions[count]);
-                this.prevQuestion();
+                if (count) {
+                  this.prevQuestion();
+                }
               }}
             >
               Delete From Favorite
