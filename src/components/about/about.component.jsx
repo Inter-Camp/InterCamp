@@ -1,6 +1,5 @@
 import React from "react";
 import "./about.styles.scss";
-import Logo from "../../assets/home.programming.jpg";
 import Image from "../../assets/home.people.jpg";
 import ImageTwo from "../../assets/home.people.copy.jpg";
 import ImageThree from "../../assets/home.programmer.jpg";
@@ -16,12 +15,7 @@ const About = () => {
   return (
     <div className="home-container">
       <div className="home-part-one">
-        <div className="box right-skew">
-          <img
-            className="home-image"
-            src={Logo}
-            alt="website-rappresentation"
-          />
+        <div className="home-image-container">
         </div>
         <div className="home-intro">
           <h1>Interview Preparation made easy</h1>
