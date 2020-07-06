@@ -9,6 +9,7 @@
   background-color: white;
   width: 220px;
   height: 330px;
+  margin: 10px;
   @include box-shadow (0px, 2px, 4px, -1px, rgb(23, 18, 71));
 
   .our-pros-image-conatiner {

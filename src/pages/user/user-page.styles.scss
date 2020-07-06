@@ -1,0 +1,13 @@
+.user-page{
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+    }
+    .favorite-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+}

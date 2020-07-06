@@ -40,3 +40,16 @@
   text-align: right;
   margin-right: 22.5px;
 }
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .quiz-container{
+    width: 100%;
+  }
+  .quiz-question{
+
+    width: 100%;
+    .question-text{
+      font-size: 1rem;
+    }
+  }
+}

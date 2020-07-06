@@ -11,25 +11,34 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 140px;
+    height: 160px;
     width: 240px;
+  }
+  .home-guest-text{
+    margin-top: 60px;
+    text-align: center
   }
 
   .continue-options {
-    margin-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 140px;
+    height: 160px;
     width: 240px;
     .guest-link {
       width: 100%;
       display: block;
-      .custom-button{
+      .custom-button {
         width: 100%;
       }
     }
-    
+    .limited-container {
+      display: flex;
+      align-items: center;
+      .limited-text {
+        margin-left: 10px;
+      }
+    }
   }
 }
 .home-best-text {
