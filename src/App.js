@@ -25,6 +25,7 @@ function App(props) {
             id: snapShot.id,
             ...snapShot.data()
           })
+          // console.log(userAuth);
         });
         history.push('/quiz');
       } else {
@@ -46,9 +47,8 @@ function App(props) {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/quiz" component={ChooseQuizPage} />
         <Route path="/quiz/:quizId" component={QuizPage} />
-        <Route path="/user" component={UserPage}/>
-        <Route path="/favorite" component={FavoritePage}/>
-
+        <Route path="/user" component={UserPage} />
+        <Route path="/favorite" component={FavoritePage} />
       </Switch>
     </div>
   );
