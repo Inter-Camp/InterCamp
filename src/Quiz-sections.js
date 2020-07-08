@@ -24,7 +24,12 @@ const QUIZ_SECTIONS = {
             id: 'react',
             linkUrl: "quiz/react",
         },
-        
+        {
+            title: "redux",
+            imageUrl: "https://i.ibb.co/rfkrqh8/redux-react.png",
+            id: 'redux',
+            linkUrl: "quiz/redux",
+        },
     ],
 };
 export default QUIZ_SECTIONS;

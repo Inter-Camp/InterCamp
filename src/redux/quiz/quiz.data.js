@@ -280,9 +280,254 @@ Normalize you might call a CSS reset alternative. Instead of wiping out all styl
         questions: [
             {
                 id: 301,
-                question: `React question `,
-                answer: `React answer`
+                question: `What are the features of React?`,
+                answer: `Major features of React are:
+
+1. It uses the virtual DOM instead of the real DOM.
+
+2. It uses server-side rendering.
+
+3. It follows uni-directional data flow or data binding.
+`
             },
+            {
+                id: 302,
+                question: `List some of the major advantages of React.`,
+                answer: `Some of the major advantages are:
+
+1. It increases the application’s performance.
+
+2. It can be conveniently used on the client as well as server side.
+
+3. Because of JSX, code’s readability increases.
+
+4. React is easy to integrate with other frameworks like Mete1. Angular, etc.
+
+5. Using React, writing UI test cases become extremely easy`
+            },
+            {
+                id: 303,
+                question: `What are the limitations of React?`,
+                answer: `
+1. React is just a library, not a full-blown framework.
+
+2. Its library is very large and takes time to understand.
+
+3. It can be little difficult for the novice programmers to understand.
+
+4. Coding gets complex as it uses inline templating and JSX.`
+            },
+            {
+                id: 304,
+                question: `What is JSX?`,
+                answer: `JSX is a shorthand for JavaScript XML. This is a type of file used by React which utilizes the expressiveness of JavaScript along with HTML like template syntax.
+This makes the HTML file really easy to understand. This file makes applications robust and boosts its performance.`
+            },
+            {
+                id: 305,
+                question: `What do you understand by Virtual DOM? Explain its working.`,
+                answer: `A virtual DOM is a lightweight JavaScript object which originally is just the copy of the real DOM.
+It is a node tree that lists the elements, their attributes and content as Objects and their properties. React’s render function creates a node tree out of the React components.
+
+It then updates this tree in response to the mutations in the data model which is caused by various actions done by the user or by the system.
+
+This Virtual DOM works in three simple steps.
+
+1. Whenever any underlying data changes, the entire UI is re-rendered in Virtual DOM representation.
+
+2. Then the difference between the previous DOM representation and the new one is calculated.
+
+3. Once the calculations are done, the real DOM will be updated with only the things that have actually changed.`
+            },
+            {
+                id: 306,
+                question: `Why can’t browsers read JSX?
+                `,
+                answer: `Browsers can only read JavaScript objects but JSX in not a regular JavaScript object. Thus to enable a browser to read JSX, first, we need to transform JSX file into a JavaScript object using JSX transformers like Babel and then pass it to the browser. `
+            },
+            {
+                id: 307,
+                question: `Explain the purpose of render() in React.
+                `,
+                answer: `It returns a single React element which is the representation of the native DOM component.
+If more than one HTML element needs to be rendered, then they must be grouped together inside one enclosing tag such as <form>, <group>,<div> etc. This function must be kept pure i.e., it must return the same result each time it is invoked.`
+            },
+            {
+                id: 308,
+                question: `What is Props?`,
+                answer: `Props is the shorthand for Properties in React. They are read-only components which must be kept pure i.e. immutable. They are always passed down from the parent to the child components throughout the application. A child component can never send a prop back to the parent component. This help in maintaining the unidirectional data flow and are generally used to render the dynamically generated data.
+
+                `
+            },
+            {
+                id: 309,
+                question: `What is a state in React and how is it used?`,
+                answer: `States are the heart of React components. States are the source of data and must be kept as simple as possible. Basically, states are the objects which determine components rendering and behavior. They are mutable unlike the props and create dynamic and interactive components. They are accessed via this.state().`
+            },
+            {
+                id: 310,
+                question: `What is arrow function in React? How is it used?`,
+                answer: `Arrow functions are more of brief syntax for writing the function expression. They are also called ‘fat arrow‘ (=>) the functions. These functions allow to bind the context of the components properly since in ES6 auto binding is not available by default. Arrow functions are mostly useful while working with the higher order functions.`
+            },
+            {
+                id: 311,
+                question: `Explain the lifecycle methods of React components in detail.`,
+                answer: `Some of the most important lifecycle methods are:
+
+componentWillMount()
+Executed just before rendering takes place both on the client as well as server-side.
+
+componentDidMount()
+Executed on the client side only after the first render.
+
+componentWillReceiveProps()
+Invoked as soon as the props are received from the parent class and before another render is called.
+
+shouldComponentUpdate()
+Returns true or false value based on certain conditions. If you want your component to update, return true else return false. By default, it returns false.
+
+componentWillUpdate()
+Called just before rendering takes place in the DOM.
+
+componentDidUpdate()
+Called immediately after rendering takes place.
+
+componentWillUnmount()
+Called after the component is unmounted from the DOM. It is used to clear up the memory spaces.`
+            },
+            {
+                id: 312,
+                question: `What do you understand by refs in React?`,
+                answer: `Refs is the short hand for References in React. It is an attribute which helps to store a reference to a particular React element or component, which will be returned by the components render configuration function.
+It is used to return references to a particular element or component returned by render(). They come in handy when we need DOM measurements or to add methods to the components.`
+            },
+            {
+                id: 313,
+                question: `What are Higher Order Components(HOC)?`,
+                answer: `Higher Order Component is an advanced way of reusing the component logic. Basically, it’s a pattern that is derived from React’s compositional nature. HOC are custom components which wrap another component within it. They can accept any dynamically provided child component but they won’t modify or copy any behavior from their input components. You can say that HOC are ‘pure’ components.`
+            },
+            {
+                id: 314,
+                question: `What can you do with HOC?`,
+                answer: `HOC can be used for many tasks like:
+
+Code reuse, logic and bootstrap abstraction;
+Render High jacking;
+State abstraction and manipulation;
+Props manipulation;`
+            },
+            {
+                id: 315,
+                question: `What is the significance of keys in React?`,
+                answer: `Keys are used for identifying unique Virtual DOM Elements with their corresponding data driving the UI. They help React to optimize the rendering by recycling all the existing elements in the DOM.
+These keys must be a unique number or string, using which React just reorders the elements instead of re-rendering them. This leads to increase in application’s performance.`
+            },
+        ]
+    },
+    redux: {
+        id: 5,
+        title: "redux",
+        routename: "redux",
+        questions: [
+            {
+                id: 401,
+                question: `What were the major problems with MVC framework?`,
+                answer: `Following are some of the major problems with MVC framework:
+
+DOM manipulation was very expensive
+Applications were slow and inefficient
+There was huge memory wastage
+Because of circular dependencies, a complicated model created around models and views`
+            },
+            {
+                id: 402,
+                question: `Explain Flux.`,
+                answer: `Flux is an architectural pattern which enforces the uni-directional data flow. It controls derived data and enables communication between multiple components using a central Store which has authority for all data. Any update in data throughout the application must occur here only. Flux provides stability to the application and reduces run-time errors.`
+            },
+            {
+                id: 403,
+                question: `What is Redux?`,
+                answer: `Redux is one of the hottest libraries for front-end development in today’s marketplace. It is a predictable state container for JavaScript applications and is used for the entire applications state management. Applications developed with Redux are easy to test and can run in different environments showing consistent behavior.`
+            },
+            {
+                id: 404,
+                question: `What are the three principles that Redux follows?
+                `,
+                answer: `Single source of truth:
+The state of the entire application is stored in an object/ state tree within a single store. The single state tree makes it easier to keep track of changes over time and debug or inspect the application.
+
+State is read-only:
+The only way to change the state is to trigger an action. An action is a plain JS object describing the change. Just like state is the minimal representation of data, the action is the minimal representation of the change to that data. 
+
+Changes are made with pure functions:
+In order to specify how the state tree is transformed by actions, you need pure functions. Pure functions are those whose return value depends solely on the values of their arguments.`
+            },
+            {
+                id: 405,
+                question: `What do you understand by “Single source of truth”?`,
+                answer: `Redux uses ‘Store’ for storing the application’s entire state at one place. So all the component’s state are stored in the Store and they receive updates from the Store itself. The single state tree makes it easier to keep track of changes over time and debug or inspect the application.`
+            },
+            {
+                id: 406,
+                question: `List the components of Redux.`,
+                answer: `Redux is composed of the following components:
+
+Action – It’s an object that describes what happened.
+Reducer –  It is a place to determine how the state will change.
+Store – State/ Object tree of the entire application is saved in the Store.
+View – Simply displays the data provided by the Store.`
+            },
+            {
+                id: 407,
+                question: `Explain the role of Reducer.`,
+                answer: `Reducers are pure functions which specify how the application’s state changes in response to an ACTION. Reducers work by taking in the previous state and action, and then it returns a new state. It determines what sort of update needs to be done based on the type of the action, and then returns new values. It returns the previous state as it is, if no work needs to be done.`
+            },
+            {
+                id: 408,
+                question: `What are the advantages of Redux?`,
+                answer: `Predictability of outcome – Since there is always one source of truth, i.e. the store, there is no confusion about how to sync the current state with actions and other parts of the application.
+
+Maintainability – The code becomes easier to maintain with a predictable outcome and strict structure.
+
+Server-side rendering – You just need to pass the store created on the server, to the client side. This is very useful for initial render and provides a better user experience as it optimizes the application performance.
+
+Developer tools – From actions to state changes, developers can track everything going on in the application in real time.
+
+Community and ecosystem – Redux has a huge community behind it which makes it even more captivating to use. A large community of talented individuals contribute to the betterment of the library and develop various applications with it.
+
+Ease of testing – Redux’s code is mostly functions which are small, pure and isolated. This makes the code testable and independent.
+
+Organization – Redux is precise about how code should be organized, this makes the code more consistent and easier when a team works with it.`
+            },
+            {
+                id: 409,
+                question: `What is Redux Thunk?`,
+                answer: `Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met. The inner function receives the store methods dispatch and getState() as parameters.`
+            },
+            {
+                id: 410,
+                question: `What are reducers in redux? `,
+                answer: `The reducer is a pure function that takes the previous state and an action, and returns the next state.
+
+(previousState, action) => newState
+
+It's called a reducer because it's the type of function you would pass to Array.prototype.reduce(reducer, ?initialValue). 
+It's very important that the reducer stays pure. Things you should never do inside a reducer:
+
+Mutate its arguments;
+Perform side effects like API calls and routing transitions;
+Call non-pure functions, e.g. Date.now() or Math.random().
+                
+                `
+            },
+            {
+                id: 411,
+                question: `What are the differences between redux-saga and redux-thunk? `,
+                answer: `Both Redux Thunk and Redux Saga take care of dealing with side effects. In most of the scenarios, Thunk allows Promises to deal with them, whereas Saga uses Generators.
+
+Thunk is simple to use and Promises are familiar to many developers, Saga/Generators are more powerful but you will need to learn them. But both the two middleware can coexists, so you can start with Thunks and introduce Sagas when/if you need them.`
+            },
+
         ]
     },
     favorite: {
