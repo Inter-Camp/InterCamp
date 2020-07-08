@@ -1,0 +1,17 @@
+.favorite-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 600px;
+
+  .fav-questions-text{
+      display: flex;
+      align-items: center;
+  }
+
+  .back-to-all-container {
+    align-self: flex-end;
+    margin-right: 25px;
+  }
+}

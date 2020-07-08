@@ -1,13 +1,19 @@
-.user-page{
-    .nav-container{
-        display: flex;
-        justify-content: space-between;
-    }
-    .favorite-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
+.user-page {
+  .nav-container {
+    margin: 60px auto;
+    width: 140px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .link-to-all {
+      width: 100%;
+      display: block;
+
+      .back-to-all-button, .custom-button{
         width: 100%;
+      }
     }
+  }
 }
