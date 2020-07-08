@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import { Link } from "react-router-dom";
 
 export const CustomButton = ({ children, onClick, color }) => {
   return (
@@ -19,9 +20,16 @@ export const CustomButton = ({ children, onClick, color }) => {
 
 export const BackToAllButton = ({ onClick }) => {
   return (
-    <Button color="primary" onClick={onClick} endIcon={<ExitToAppIcon />}>
-      Back To All
-    </Button>
+    <Link className="link-to-all" to={"/quiz"}>
+      <Button
+        className="back-to-all-button"
+        color="primary"
+        onClick={onClick}
+        endIcon={<ExitToAppIcon />}
+      >
+        All Quizzes
+      </Button>
+    </Link>
   );
 };
 
