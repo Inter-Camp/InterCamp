@@ -11,7 +11,6 @@ const persistConfig = {
     whitelist: ["quiz"]
 }
 
-
 const rootReducer = combineReducers({
     quiz: quizReducer,
     user: userReducer
