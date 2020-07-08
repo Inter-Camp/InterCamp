@@ -4,6 +4,7 @@ body {
   margin: 0 auto;
   max-width: 1200px;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -22,6 +23,7 @@ a {
   justify-content: space-around;
   margin: 0px auto;
 }
+
 @media (max-width: 768px) {
   body {
     padding: 20px 20px;
