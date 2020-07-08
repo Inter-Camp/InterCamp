@@ -41,6 +41,19 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
 
     return userRef;
+};
+
+export const addQuizzesAndDocuments = async (quizKey, objectsToAdd) => {
+    const quizRef = firestore.collection(quizKey);
+    // batch groups all calls in one request
+    const batch = firestore.batch();
+    objectsToAdd.forEach(obj => {
+        // create unique key
+        const newDocRef = quizRef.doc();
+        // console.log(obj);
+        batch.set(newDocRef, obj);
+    });
+    return await batch.commit();
 }
 
 firebase.initializeApp(config);
@@ -48,20 +61,45 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
+const googleprovider = new firebase.auth.GoogleAuthProvider();
 // trigger the pop-up from google provider
-provider.setCustomParameters({ prompt: "select_account" });
-
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+googleprovider.setCustomParameters({ prompt: "select_account" });
 
 const fbprovider = new firebase.auth.FacebookAuthProvider();
-fbprovider.setCustomParameters({ prompt: "select_account" });
-
-export const signInWithFacebook = () => auth.signInWithPopup(fbprovider);
+fbprovider.setCustomParameters({ display: 'popup' });
 
 var githubprovider = new firebase.auth.GithubAuthProvider();
+githubprovider.setCustomParameters({ login: "select_account" })
 
-export const signInWithGitHub = () => auth.signInWithPopup(githubprovider);
+const getProviderById = (id) => {
+    const providers = {
+        'google.com': googleprovider,
+        'github.com': githubprovider,
+        'facebook.com': fbprovider
+    }
+    return providers[id];
+}
+
+const handleDuplicateAccounts = (error) => {
+    if (error.code === 'auth/account-exists-with-different-credential') {
+        var pendingCred = error.credential;
+        var email = error.email;
+        auth.fetchSignInMethodsForEmail(email).then(function (methods) {
+            const provider = getProviderById(methods[0]);
+            auth.signInWithPopup(provider).then(function (result) {
+                result.user.linkAndRetrieveDataWithCredential(pendingCred).then(function (usercred) {
+                    console.log(usercred);
+                });
+            });
+        });
+    }
+}
+
+export const signInWithGoogle = () => auth.signInWithPopup(googleprovider).catch(handleDuplicateAccounts);
+
+export const signInWithFacebook = () => auth.signInWithPopup(fbprovider).catch(handleDuplicateAccounts);
+
+export const signInWithGitHub = () => auth.signInWithPopup(githubprovider).catch(handleDuplicateAccounts);
 
 
 
