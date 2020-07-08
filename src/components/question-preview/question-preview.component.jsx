@@ -13,8 +13,13 @@ class QuestionPreview extends React.Component {
     this.state = {
       count: 0,
       showTheAnswer: false,
+      favoriteSwitch: true,
     };
   }
+
+  favoriteSwitch = () => {
+    this.setState({ favoriteSwitch: false });
+  };
 
   totalQuestions = () => {
     return this.props.questions.length - 1; //3
@@ -22,13 +27,21 @@ class QuestionPreview extends React.Component {
 
   nextQuestion = () => {
     this.setState((state) => {
-      return { count: state.count + 1, showTheAnswer: false };
+      return {
+        count: state.count + 1,
+        showTheAnswer: false,
+        favoriteSwitch: true,
+      };
     });
   };
 
   prevQuestion = () => {
     this.setState((state) => {
-      return { count: state.count - 1, showTheAnswer: false };
+      return {
+        count: state.count - 1,
+        showTheAnswer: false,
+        favoriteSwitch: true,
+      };
     });
   };
 
@@ -46,6 +59,7 @@ class QuestionPreview extends React.Component {
       deleteFavorite,
     } = this.props;
     // console.log(questions[count].id);
+
     return (
       <div className="quiz-container">
         <h3 className="question-count">
@@ -73,9 +87,12 @@ class QuestionPreview extends React.Component {
           {currentUser && addToFav ? (
             <CustomButton
               color="primary"
-              onClick={() => addFavorite(questions[count])}
+              onClick={() => {
+                addFavorite(questions[count]);
+                this.favoriteSwitch();
+              }}
             >
-              Add to Favorite
+              {this.state.favoriteSwitch ? "Add to Favorite" : "Sucessfully Added"}
             </CustomButton>
           ) : null}
           {currentUser && !addToFav ? (
@@ -119,7 +136,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispathToProps = (dispatch) => ({
   addFavorite: (item) => {
-    console.log(item);
+    // console.log(item);
     dispatch(addFavorite(item));
   },
   deleteFavorite: (item) => {
