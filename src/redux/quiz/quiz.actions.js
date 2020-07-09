@@ -8,4 +8,9 @@ export const addFavorite = (item) => ({
 export const deleteFavorite = (item) => ({
     type: QuizActionTypes.DELETE_FAVORITE,
     payload: item
+});
+
+export const updateQuestions = (collectionsMap) => ({
+    type: QuizActionTypes.UPDATE_QUESTIONS,
+    payload: collectionsMap
 })
