@@ -34,6 +34,9 @@
 .quiz-buttons {
   display: flex;
   justify-content: space-around;
+  .custom-button{
+    width: 48%;
+  }
 }
 
 .question-count {
@@ -50,6 +53,7 @@
     width: 100%;
     .question-text{
       font-size: 1rem;
+      min-height: 140px;
     }
   }
 }

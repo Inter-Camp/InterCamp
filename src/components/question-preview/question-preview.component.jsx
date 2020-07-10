@@ -92,7 +92,7 @@ class QuestionPreview extends React.Component {
                 this.favoriteSwitch();
               }}
             >
-              {this.state.favoriteSwitch ? "Add to Favorite" : "Sucessfully Added"}
+              {this.state.favoriteSwitch ? "Add to Favorite" : "Added"}
             </CustomButton>
           ) : null}
           {currentUser && !addToFav ? (
@@ -105,7 +105,7 @@ class QuestionPreview extends React.Component {
                 }
               }}
             >
-              Delete From Favorite
+              Delete Favorite
             </CustomButton>
           ) : null}
         </div>

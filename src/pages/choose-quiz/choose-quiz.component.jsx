@@ -13,6 +13,7 @@ const ChooseQuizPage = ({ match }) => {
           key={item.id}
           imageUrl={item.imageUrl}
           linkUrl={item.linkUrl}
+          title={item.title}
         />
       ))}
     </div>
