@@ -8,6 +8,11 @@ const INITIAL_STATE = {
 
 const quizReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
+        case QuizActionTypes.UPDATE_QUESTIONS:
+            return {
+                ...state,
+                questions: action.payload
+            }
         case QuizActionTypes.ADD_FAVORITE:
             return {
                 questions: {

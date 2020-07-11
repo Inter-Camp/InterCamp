@@ -53,7 +53,25 @@ export const addQuizzesAndDocuments = async (quizKey, objectsToAdd) => {
         // console.log(obj);
         batch.set(newDocRef, obj);
     });
-    return await batch.commit();
+    // return await batch.commit();
+};
+
+// Get Snapshot Array
+export const convertCollectionsSnapshotToMap = (collections) => {
+    const transformedCollection = collections.docs.map(doc => {
+        const { title, questions } = doc.data();
+        return {
+            routeName: encodeURI(title.toLowerCase()),
+            id: doc.id,
+            title,
+            questions
+        }
+    });
+
+    return transformedCollection.reduce((accumulator, collection) => {
+        accumulator[collection.title.toLowerCase()] = collection;
+        return accumulator;
+    }, {}); 
 }
 
 firebase.initializeApp(config);
