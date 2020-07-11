@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { BackToAllButton } from "../../components/custom-button/custom-button.component";
 import { FilledStarIcon } from "../../components/icons/favorite-icons.component";
 
-const FavoritePage = ({ favQuestions }) => {
+const FavoritePage = ({ favQuestions, questions }) => {
   const id = "favorite";
   const addToFav = false;
   return (
@@ -19,7 +19,7 @@ const FavoritePage = ({ favQuestions }) => {
         <FilledStarIcon />
       </div>
       {favQuestions.questions.length ? (
-        <QuestionPreview quizId={id} addToFav={addToFav} />
+        <QuestionPreview quizId={id} addToFav={addToFav} questionsObj={questions} />
       ) : (
         <p>No Favorite Questions Yet</p>
       )}
@@ -28,7 +28,10 @@ const FavoritePage = ({ favQuestions }) => {
 };
 
 const mapStateToProps = (state) => {
-  return { favQuestions: state.quiz.questions.favorite };
+  return {
+    favQuestions: state.quiz.questions.favorite,
+    questions: state.quiz.questions,
+  };
 };
 
 export default connect(mapStateToProps)(FavoritePage);

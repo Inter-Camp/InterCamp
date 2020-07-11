@@ -22,7 +22,8 @@ class QuestionPreview extends React.Component {
   };
 
   totalQuestions = () => {
-    return this.props.questions.length - 1; //3
+    const { questionsObj, quizId } = this.props;
+    return questionsObj[quizId].questions.length - 1; //3
   };
 
   nextQuestion = () => {
@@ -52,14 +53,17 @@ class QuestionPreview extends React.Component {
   render() {
     const { count } = this.state;
     const {
-      questions,
+      // questions,
       currentUser,
-      addFavorite,
+      questionsObj,
+      quizId,
       addToFav,
+      addFavorite,
       deleteFavorite,
     } = this.props;
     // console.log(questions[count].id);
-
+    console.log(questionsObj[quizId].questions);
+    const questions = questionsObj[quizId].questions;
     return (
       <div className="quiz-container">
         <h3 className="question-count">
@@ -126,10 +130,8 @@ class QuestionPreview extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  const quiz = state.quiz.questions[ownProps.quizId];
+const mapStateToProps = (state) => {
   return {
-    questions: quiz.questions,
     currentUser: state.user.currentUser,
   };
 };

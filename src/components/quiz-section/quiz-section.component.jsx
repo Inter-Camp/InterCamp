@@ -4,7 +4,6 @@ import { CustomButton } from "../custom-button/custom-button.component";
 import { Link } from "react-router-dom";
 
 const QuizSection = ({ imageUrl, linkUrl, title }) => {
-  console.log(title, "title");
   return (
     <div className="section-container">
       <div
