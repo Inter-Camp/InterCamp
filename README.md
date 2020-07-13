@@ -9,8 +9,6 @@
    </br>
   The biggest challenge was to structure data, so all the updates are efficient and easy to make.</p>
    <h2>Visit the Website: <a href="https://intercamp.herokuapp.com/">InterCamp</a></h2>
-  <img src="./src/assets/app-preview.png" alt="app-preview" wigth="100vw">
-  
   <h1>Completed MVP</h1>
   <p>Log in workflow with Firebase
    </br>
