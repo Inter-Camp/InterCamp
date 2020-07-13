@@ -21,6 +21,7 @@
   <p>Redux-Redirect to the Quiz page after successful login</p>
   <p>Store quiz data in Firestore and make Asynchronous calls with a help of Redux-thunk library</p>
   <img src="https://media.giphy.com/media/gkLEV6gchzpnMw2S05/giphy.gif" alt="app-preview" wigth="100vw">
+   <h2>Visit the Website: <a href="https://intercamp.herokuapp.com/">InterCamp</a></h2>
 </div>
 
 
