@@ -1,5 +1,5 @@
 <div >
-  
+    <img src="./src/assets/Intercamp-header.png" alt="app-preview" wigth="100vw">
   <h1>Overview and Goals</h1>
   <p>InterCamp is an interview preparation platform, where users can check their knowledge on a specific topic.
    </br>
