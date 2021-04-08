@@ -8,7 +8,16 @@
 
 **Users can log in and save their favorite questions.**
 
----
+## CONTRIBUTE
+
+1. Check out [Contributing](https://github.com/Inter-Camp/InterCamp/blob/master/CONTRIBUTING.md) to learn about the process.
+
+
+3. Add your name to [Contributors](https://github.com/Inter-Camp/start-here-guides) following this guideline if you want to be a part of the project.
+
+
+5. We're exited to have you here!
+
 
 ## &#9881; STACK
 
