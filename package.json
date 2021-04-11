@@ -7,7 +7,7 @@
     "@material-ui/icons": "4.11.2",
     "@testing-library/jest-dom": "5.11.9",
     "@testing-library/react": "11.2.5",
-    "@testing-library/user-event": "7.2.1",
+    "@testing-library/user-event": "13.1.1",
     "firebase": "8.3.2",
     "node-sass": "5.0.0",
     "react": "17.0.1",
