@@ -32,10 +32,8 @@ export const fetchQuestionsStartAsync = () => {
         // whenever it updates it'll update;
         quizRef.get()
             .then((snapshot) => {
-                // console.log(snapshot);
                 const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
                 dispatch(fetchQuestionsSuccess(collectionsMap));
-                // console.log(collectionsMap);
             })
             .catch(error => dispatch(fetchQuestionsFailure(error.message)));
     }
