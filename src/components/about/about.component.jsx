@@ -27,7 +27,9 @@ const About = () => {
 
       <div className="home-part-two">
         {ourPros.map((item) => (
-          <OurProsCard image={item}>{item.text}</OurProsCard>
+          <OurProsCard key={item.id} image={item}>
+            {item.text}
+          </OurProsCard>
         ))}
       </div>
     </div>
