@@ -25,7 +25,6 @@ function App(props) {
             id: snapShot.id,
             ...snapShot.data()
           })
-          // console.log(userAuth);
         });
         history.push('/quiz');
       } else {
@@ -38,7 +37,6 @@ function App(props) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
 
   return (
     <div>

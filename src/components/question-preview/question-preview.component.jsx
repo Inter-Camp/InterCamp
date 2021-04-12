@@ -61,8 +61,6 @@ class QuestionPreview extends React.Component {
       addFavorite,
       deleteFavorite,
     } = this.props;
-    // console.log(questions[count].id);
-    console.log(questionsObj[quizId].questions);
     const questions = questionsObj[quizId].questions;
     return (
       <div className="quiz-container">
@@ -138,7 +136,6 @@ const mapStateToProps = (state) => {
 
 const mapDispathToProps = (dispatch) => ({
   addFavorite: (item) => {
-    // console.log(item);
     dispatch(addFavorite(item));
   },
   deleteFavorite: (item) => {

@@ -9,7 +9,6 @@ import {
 } from "../../components/custom-button/custom-button.component";
 
 const UserPage = ({ favQuestions }) => {
-  console.log(favQuestions);
   return (
     <div className="user-page">
       <div className="nav-container">
