@@ -1,8 +1,7 @@
 import React from "react";
 import "./choose-quiz.styles.scss";
-
 import QuizSection from "../../components/quiz-section/quiz-section.component";
-import QUIZ_SECTIONS from "../../Quiz-sections";
+import QUIZ_SECTIONS from "../../data/quiz-sections";
 
 const ChooseQuizPage = ({ match }) => {
   return (
