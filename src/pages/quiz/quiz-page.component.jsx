@@ -3,16 +3,13 @@ import "./quiz-page.styles.scss";
 import QuestionPreview from "../../components/question-preview/question-preview.component";
 import { connect } from "react-redux";
 import { fetchQuestionsStartAsync } from "../../redux/quiz/quiz.actions";
-
 import { BackToAllButton } from "../../components/custom-button/custom-button.component";
-
-// import { updateQuestions } from "../../redux/quiz/quiz.actions";
 
 class QuizPage extends React.Component {
   unsubscribeFromSnapshot = null;
 
   componentDidMount() {
-    const { fetchQuestionsStartAsync} = this.props;
+    const { fetchQuestionsStartAsync } = this.props;
     fetchQuestionsStartAsync();
   }
 
@@ -31,13 +28,11 @@ class QuizPage extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  // console.log(state.quiz.questions);
-  return { questions: state.quiz.questions };
+  return { questions: state.quiz?.questions || [] };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  // updateQuestions: (collectionsMap) =>
-  //   dispatch(updateQuestions(collectionsMap)),
-  fetchQuestionsStartAsync: () => dispatch(fetchQuestionsStartAsync())
+  fetchQuestionsStartAsync: () => dispatch(fetchQuestionsStartAsync()),
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(QuizPage);
