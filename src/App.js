@@ -10,6 +10,7 @@ import QuizPage from "./pages/quiz/quiz-page.component";
 import Header from "./components/header/header.component";
 import UserPage from './pages/user/user-page.component';
 import FavoritePage from './pages/favorite/favorite-page.component';
+import Footer from './components/footer/footer.component'
 import { auth, createUserProfileDocument } from "./firebase/firebas.utils";
 
 function App(props) {
@@ -39,7 +40,7 @@ function App(props) {
   }, []);
 
   return (
-    <div>
+    <div className='App'>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -48,6 +49,7 @@ function App(props) {
         <Route path="/user" component={UserPage} />
         <Route path="/favorite" component={FavoritePage} />
       </Switch>
+      <Footer />
     </div>
   );
 }
