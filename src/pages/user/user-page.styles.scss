@@ -2,7 +2,7 @@
   .nav-container {
     margin: 60px auto;
     width: 140px;
-    height: 200px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,7 +11,8 @@
       width: 100%;
       display: block;
 
-      .back-to-all-button, .custom-button{
+      .back-to-all-button,
+      .custom-button {
         width: 100%;
       }
     }

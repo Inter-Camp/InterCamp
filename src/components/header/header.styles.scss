@@ -1,6 +1,9 @@
 .header {
   height: 70px;
   width: 100%;
+  max-width: 1200px;
+  padding: 20px 80px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,8 +39,14 @@
     cursor: pointer;
   }
 
-  .user-fav-container{
+  .user-fav-container {
     display: flex;
     align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 20px;
   }
 }
