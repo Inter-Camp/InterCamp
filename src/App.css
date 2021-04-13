@@ -1,12 +1,13 @@
 body {
   font-family: "Open Sans Condensed", sans-serif;
-  padding: 20px 80px;
   margin: 0 auto;
-  max-width: 1200px;
+  overflow: auto;
+  height: 100%;
 }
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 a {
@@ -14,19 +15,32 @@ a {
   color: black;
 }
 
+li {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
 * {
   box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .quiz-s-preview {
   display: flex;
   justify-content: space-around;
   margin: 0px auto;
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 20px 20px;
-    padding-bottom: 60px;
-  }
 }
