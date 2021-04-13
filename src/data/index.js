@@ -18,3 +18,28 @@ export const ourPros = [
         text: 'Be prepared for all types of questions'
     }
 ]
+
+export const links = [
+    {
+        title: 'Home',
+        linkUrl: './'
+    },
+    {
+        title: 'Quizzes',
+        linkUrl: './quiz'
+    },
+    {
+        title: 'FAQ',
+        linkUrl: './'
+    },
+]
+
+export const footer = {
+    title: 'InterCamp',
+    p: 'InterCamp is an interview preparation platform, where users can check their knowledge on a specific topic.',
+    links: {
+        fb: 'https://www.facebook.com/',
+        ig: 'https://www.instagram.com/',
+        tt: 'https://www.twitter.com/'
+    }
+}
