@@ -17,17 +17,13 @@ const config = {
 // get user object and store in database
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     if (!userAuth) return;
-
     const userRef = firestore.doc(`users/${userAuth.uid}`);
-
     const snapShot = await userRef.get();
 
-    // console.log(snapShot);
     if (!snapShot.exists) {
         const { displayName, email } = userAuth;
         // when the user was created
         const createdAt = new Date();
-
         try {
             await userRef.set({
                 displayName,
@@ -39,7 +35,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
             console.log('error creating user', error.message);
         }
     }
-
     return userRef;
 };
 
@@ -50,10 +45,8 @@ export const addQuizzesAndDocuments = async (quizKey, objectsToAdd) => {
     objectsToAdd.forEach(obj => {
         // create unique key
         const newDocRef = quizRef.doc();
-        // console.log(obj);
         batch.set(newDocRef, obj);
     });
-    // return await batch.commit();
 };
 
 // Get Snapshot Array
@@ -71,7 +64,7 @@ export const convertCollectionsSnapshotToMap = (collections) => {
     return transformedCollection.reduce((accumulator, collection) => {
         accumulator[collection.title.toLowerCase()] = collection;
         return accumulator;
-    }, {}); 
+    }, {});
 }
 
 firebase.initializeApp(config);
@@ -105,8 +98,9 @@ const handleDuplicateAccounts = (error) => {
         auth.fetchSignInMethodsForEmail(email).then(function (methods) {
             const provider = getProviderById(methods[0]);
             auth.signInWithPopup(provider).then(function (result) {
-                result.user.linkAndRetrieveDataWithCredential(pendingCred).then(function (usercred) {
-                    console.log(usercred);
+                result.User.linkAndRetrieveDataWithCredential(pendingCred).then(function (usercred) {
+                    // handle userCredential
+                    //console.log(usercred);
                 });
             });
         });
