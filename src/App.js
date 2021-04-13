@@ -4,12 +4,12 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 
-import ChooseQuizPage from "./pages/choose-quiz/choose-quiz.component";
-import HomePage from "./pages/home/home-page.component";
-import QuizPage from "./pages/quiz/quiz-page.component";
+import ChooseQuizPage from "./pages/choose-quiz";
+import HomePage from "./pages/home";
+import QuizPage from "./pages/quiz";
 import Header from "./components/header/header.component";
-import UserPage from './pages/user/user-page.component';
-import FavoritePage from './pages/favorite/favorite-page.component';
+import UserPage from './pages/user';
+import FavoritePage from './pages/favorite';
 import Footer from './components/footer/footer.component'
 import { auth, createUserProfileDocument } from "./firebase/firebas.utils";
 

@@ -19,7 +19,11 @@ const FavoritePage = ({ favQuestions, questions }) => {
         <FilledStarIcon />
       </div>
       {favQuestions.questions.length ? (
-        <QuestionPreview quizId={id} addToFav={addToFav} questionsObj={questions} />
+        <QuestionPreview
+          quizId={id}
+          addToFav={addToFav}
+          questionsObj={questions}
+        />
       ) : (
         <p>No Favorite Questions Yet</p>
       )}
