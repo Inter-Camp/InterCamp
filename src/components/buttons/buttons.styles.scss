@@ -1,0 +1,46 @@
+@import "../../styles/colors";
+
+.button-primary {
+  width: 100%;
+  padding: 20px 15px;
+  background-color: $accent-blue;
+  border: 3px solid $accent-blue;
+  box-shadow: 0 10px 20px $transparent-blue;
+  font: bold 1.5rem sans-serif;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+
+  &:hover {
+    background-color: white;
+    color: $dark-grey;
+    box-shadow: 0 0 10px $transparent-blue;
+  }
+}
+
+.i-button-primary {
+  height: 100%;
+  width: 100%;
+  border: 2px solid $light-grey;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px;
+
+  .i-button-icon-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    .i-button-icon {
+      padding: 2px;
+      height: 80%;
+      margin: auto;
+    }
+  }
+  &:hover {
+    border: 0px;
+    box-shadow: 0 0 15px $light-grey;
+  }
+}

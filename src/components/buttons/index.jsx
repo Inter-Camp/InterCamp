@@ -4,14 +4,34 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Link } from "react-router-dom";
+import "./buttons.styles.scss";
 
-export const CustomButton = ({ children, onClick, color }) => {
+export const ButtonPrimary = ({ children, onClick, type }) => {
+  return (
+    <button className="button-primary" onClick={onClick} type={type}>
+      {children}
+    </button>
+  );
+};
+
+export const IButtonPrimary = ({ iconUrl, iconAlt, onClick }) => {
+  return (
+    <button className="i-button-primary" onClick={onClick}>
+      <div className="i-button-icon-container">
+        <img className="i-button-icon" src={iconUrl} alt={iconAlt} />
+      </div>
+    </button>
+  );
+};
+
+export const CustomButton = ({ children, onClick, color, type }) => {
   return (
     <Button
       className="custom-button"
       variant="contained"
       color={color}
       onClick={onClick}
+      type={type}
     >
       {children}
     </Button>
