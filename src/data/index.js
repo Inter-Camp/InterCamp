@@ -43,3 +43,72 @@ export const footer = {
         tt: 'https://www.twitter.com/'
     }
 }
+
+export const signUp = {
+    id: 'signUp',
+    title: 'join our team',
+    subtitle: 'Learn with other, practice together!',
+    imgAlt: 'hand-drawn-people-giving-high-five',
+    imgUrl: './images/join-us.png',
+    accountExist: 'Aready have an account?',
+    submitLabel: 'Sign Up',
+    inputFields: [
+        {
+            id: 'name',
+            type: 'text',
+            placeholder: 'Enter Your Name',
+        },
+        {
+            id: 'emailfield',
+            type: 'text',
+            placeholder: 'Enter Your Email',
+            autocomplete: 'username',
+        },
+        {
+            id: 'password',
+            type: 'password',
+            placeholder: 'Enter Your Password',
+            autocomplete: 'new-password'
+        },
+    ],
+}
+
+export const signIn = {
+    id: 'signIn',
+    title: 'welcome back',
+    subtitle: 'We are happy to see you!',
+    imgAlt: 'hand-drawn-people-giving-high-five',
+    imgUrl: './images/join-us.png',
+    accountExist: 'Create an account!',
+    submitLabel: 'Sign In',
+    inputFields: [
+        {
+            id: 'emailfield',
+            type: 'text',
+            placeholder: 'Enter Your Email',
+            autocomplete: 'username',
+        },
+        {
+            id: 'password',
+            type: 'password',
+            placeholder: 'Enter Your Password',
+            autocomplete: 'current-password'
+        },
+    ],
+}
+
+export const signInOptions = {
+    optionText: 'or continue with',
+    facebook: {
+        id: 'facebook',
+        imageUrl: './icons/facebook.png'
+    },
+    google: {
+        id: 'google',
+        imageUrl: './icons/google.png'
+    },
+    github: {
+        id: 'github',
+        imageUrl: './icons/github.png'
+    }
+}
