@@ -2,7 +2,7 @@ import React from "react";
 import "./about.styles.scss";
 import { ourPros } from "../../data/index";
 
-import { CustomButton } from "../custom-button/custom-button.component";
+import { CustomButton } from "../buttons";
 import OurProsCard from "../our-pros-card/our-pros.component";
 
 const About = () => {

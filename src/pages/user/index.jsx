@@ -3,10 +3,7 @@ import "./user-page.styles.scss";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebas.utils";
 
-import {
-  CustomButton,
-  BackToAllButton,
-} from "../../components/custom-button/custom-button.component";
+import { CustomButton, BackToAllButton } from "../../components/buttons";
 
 const UserPage = ({ favQuestions }) => {
   return (

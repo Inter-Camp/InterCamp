@@ -2,7 +2,7 @@ import React from "react";
 import "./favorite-page.styles.scss";
 import QuestionPreview from "../../components/question-preview/question-preview.component";
 import { connect } from "react-redux";
-import { BackToAllButton } from "../../components/custom-button/custom-button.component";
+import { BackToAllButton } from "../../components/buttons";
 import { FilledStarIcon } from "../../components/icons/favorite-icons.component";
 
 const FavoritePage = ({ favQuestions, questions }) => {

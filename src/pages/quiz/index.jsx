@@ -3,7 +3,7 @@ import "./quiz-page.styles.scss";
 import QuestionPreview from "../../components/question-preview/question-preview.component";
 import { connect } from "react-redux";
 import { fetchQuestionsStartAsync } from "../../redux/quiz/quiz.actions";
-import { BackToAllButton } from "../../components/custom-button/custom-button.component";
+import { BackToAllButton } from "../../components/buttons";
 
 class QuizPage extends React.Component {
   unsubscribeFromSnapshot = null;
