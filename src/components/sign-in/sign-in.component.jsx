@@ -1,10 +1,6 @@
 import React from "react";
 import "./sign-in.styles.scss";
-import {
-  CustomButton,
-  GitHubSignInButton,
-  FBSignInButton,
-} from "../custom-button/custom-button.component";
+import { CustomButton, GitHubSignInButton, FBSignInButton } from "../buttons";
 import { Link } from "react-router-dom";
 import { BlockIconIcon } from "../icons/block-icon.component";
 
