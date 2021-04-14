@@ -31,3 +31,6 @@ Prefer smaller, focussed changes. For example, separate renaming/refactoring cha
 ### Testing
 Write unit tests to cover code changes you make. We aim for 100% code coverage
 Make sure no existing test is broken
+
+### CONTRIBUTORS
+- Ahmed Yaseen
