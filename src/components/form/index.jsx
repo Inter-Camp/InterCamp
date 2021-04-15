@@ -5,6 +5,7 @@ import { ButtonPrimary } from "../buttons";
 const Form = ({ data, onSubmit }) => {
   return (
     <form
+      id="formElem"
       key="form"
       className="form-sign-up"
       validate="true"
