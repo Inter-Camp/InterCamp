@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import { Switch, Route, useHistory } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
-
 import ChooseQuizPage from "./pages/choose-quiz";
 import HomePage from "./pages/home";
 import QuizPage from "./pages/quiz";
 import Header from "./components/header/header.component";
 import UserPage from './pages/user';
 import FavoritePage from './pages/favorite';
+import SignUpPage from './pages/sign-in-and-sign-up';
 import Footer from './components/footer/footer.component'
 import { auth, createUserProfileDocument } from "./firebase/firebas.utils";
 
 function App(props) {
-  const history = useHistory();
+  // const history = useHistory();
   useEffect(() => {
     const unsubscibeFromAuth = auth.onAuthStateChanged(async userAuth => {
       // check if there is a user
@@ -27,10 +27,8 @@ function App(props) {
             ...snapShot.data()
           })
         });
-        history.push('/quiz');
       } else {
         props.setCurrentUser(null)
-        history.push('/');
       }
     });
     return () => {
@@ -46,16 +44,22 @@ function App(props) {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/quiz" component={ChooseQuizPage} />
         <Route path="/quiz/:quizId" component={QuizPage} />
-        <Route path="/user" component={UserPage} />
+        <Route path="/user" render={() => !props.currentUser ? (<Redirect to='/' />) : (<UserPage />)} />
         <Route path="/favorite" component={FavoritePage} />
+        <Route path='/signin' render={() => props.currentUser ? (<Redirect to='/quiz' />) : (<SignUpPage />)} />
       </Switch>
       <Footer />
     </div>
   );
 }
 
+const mapStateToProps = state => {
+  console.log(state.user);
+  return { currentUser: state.user.currentUser }
+}
+
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
