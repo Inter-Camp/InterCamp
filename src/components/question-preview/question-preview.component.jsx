@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { addFavorite, deleteFavorite } from "../../redux/quiz/quiz.actions";
 
 import { ArrowForward, ArrowBack } from "../icons/arrows.component";
-import { CustomButton } from "../custom-button/custom-button.component";
+import { CustomButton } from "../buttons";
 import { CardComponent } from "../card/card.component";
 
 class QuestionPreview extends React.Component {
