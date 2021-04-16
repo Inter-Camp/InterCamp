@@ -1,38 +1,31 @@
 import React from "react";
 import "./about.styles.scss";
-import { ourPros } from "../../data/index";
-
-import { CustomButton } from "../buttons";
+import { Link } from "react-router-dom";
+import { ourPros, home } from "../../data/index";
 import OurProsCard from "../our-pros-card/our-pros.component";
+import AboutInfo from "./info";
 
 const About = () => {
   return (
-    <div className="home-container">
-      <div className="home-part-one">
-        <div className="home-image-container"></div>
-        <div className="home-intro">
-          <h1>Interview Preparation made easy</h1>
-          <h3>HTML, CSS, JavaScript, React</h3>
-          <p>
-            Most common interview theory questions. Check yourself and prepare
-            for upcomming interviews
-          </p>
-          <div className="sign-in-container">
-            <a href="#sign-in">
-              <CustomButton color="primary">Get Started</CustomButton>
-            </a>
-          </div>
+    <>
+      <div className="home-container">
+        <section className="home-part-one">
+          <AboutInfo pageData={home} />
+        </section>
+      </div>
+      <section className="home-part-two">
+        <div className="our-pros-container">
+          {ourPros.map((item) => (
+            <OurProsCard key={item.id} image={item}>
+              {item.text}
+            </OurProsCard>
+          ))}
         </div>
-      </div>
-
-      <div className="home-part-two">
-        {ourPros.map((item) => (
-          <OurProsCard key={item.id} image={item}>
-            {item.text}
-          </OurProsCard>
-        ))}
-      </div>
-    </div>
+        <Link to={home.quizLink}>
+          <h2 className="home-part-two-action">{home.quizLabel}</h2>
+        </Link>
+      </section>
+    </>
   );
 };
 
