@@ -50,7 +50,7 @@ export const signUp = {
     subtitle: 'Learn with other, practice together!',
     imgAlt: 'hand-drawn-people-giving-high-five',
     imgUrl: './images/join-us.png',
-    accountExist: 'Aready have an account?',
+    accountExists: 'Aready have an account?',
     submitLabel: 'Sign Up',
     inputFields: [
         {
@@ -60,7 +60,7 @@ export const signUp = {
         },
         {
             id: 'emailfield',
-            type: 'text',
+            type: 'email',
             placeholder: 'Enter Your Email',
             autocomplete: 'username',
         },
@@ -79,12 +79,12 @@ export const signIn = {
     subtitle: 'We are happy to see you!',
     imgAlt: 'hand-drawn-people-giving-high-five',
     imgUrl: './images/join-us.png',
-    accountExist: 'Create an account!',
+    accountExists: 'Create an account!',
     submitLabel: 'Sign In',
     inputFields: [
         {
             id: 'emailfield',
-            type: 'text',
+            type: 'email',
             placeholder: 'Enter Your Email',
             autocomplete: 'username',
         },
@@ -111,4 +111,29 @@ export const signInOptions = {
         id: 'github',
         imageUrl: './icons/github.png'
     }
+}
+
+export const home = {
+    title: 'Prepare for Coding Interviews',
+    subtitle1: 'Most common interview theory questions. Check yourself and prepare for upcomming interviews',
+    subtitle2: '',
+    signInLabel: 'Get Started',
+    signInLabel2: 'Start learning today!',
+    signInLink: '/signin',
+    quizLabel: 'Go to Quizzes!',
+    quizLink: '/quiz',
+    userLabel: '/user',
+    userLink: 'User Page',
+    joinUsLables: [
+        { id: 1, text: 'Get ready to learn difficult concepts.' },
+        { id: 2, text: 'Practive everywhere, because consistency is the key!' },
+        { id: 3, text: 'Become a part of growing community.' },
+        { id: 4, text: 'Track your progress to stay motivated.' },
+    ]
+}
+
+export const header = {
+    websiteName: 'InterCamp',
+    signInLink: '/signin',
+    signInLabel: 'Get Started',
 }
