@@ -1,0 +1,60 @@
+@import "../../styles/colors";
+
+#join-us {
+  margin-bottom: 160px;
+  .options-container {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 770px;
+
+    .continue-options {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 260px;
+      max-width: 440px;
+      padding: 20px;
+
+      .guest-link {
+        width: 100%;
+        display: block;
+        .custom-button {
+          width: 100%;
+        }
+      }
+      .limited-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        .limited-text {
+          font-size: 1.3rem;
+          margin-left: 10px;
+        }
+      }
+    }
+    .check-our-quizzes {
+      flex: 1;
+      padding: 10px;
+    }
+  }
+  .home-best-text {
+    text-align: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1000px) {
+  #join-us {
+    margin-bottom: 60px;
+    .options-container {
+      flex-direction: column;
+      padding: 20px;
+      align-items: center;
+
+      .check-our-quizzes {
+        margin-top: 60px;
+      }
+    }
+  }
+}
