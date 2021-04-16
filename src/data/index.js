@@ -135,5 +135,5 @@ export const home = {
 export const header = {
     websiteName: 'InterCamp',
     signInLink: '/signin',
-    signInLabel: 'Get Started',
+    signInLabel: 'Sign In',
 }
