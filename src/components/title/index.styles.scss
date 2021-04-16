@@ -1,0 +1,12 @@
+@import "../../styles/colors";
+
+.title-link-primary {
+  font-size: 3rem;
+  font-weight: bold;
+  color: $dust-blue;
+  margin-top: 0;
+  text-shadow: 1px 1px 2px rgb(253, 105, 130);
+  &:hover {
+    text-shadow: 1px 1px 2px orange;
+  }
+}
