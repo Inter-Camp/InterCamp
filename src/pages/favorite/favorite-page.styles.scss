@@ -4,16 +4,19 @@
   align-items: center;
   margin: 20px auto;
   max-width: 600px;
-
-  .fav-questions-text{
-      display: flex;
-      align-items: center;
-      text-align: center;
-
+  .fav-questions-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
-
   .back-to-all-container {
     align-self: flex-end;
     margin-right: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .favorite-container {
+    margin: 20px 20px 120px;
   }
 }
