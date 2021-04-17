@@ -23,7 +23,7 @@ class QuestionPreview extends React.Component {
 
   totalQuestions = () => {
     const { questionsObj, quizId } = this.props;
-    return questionsObj[quizId].questions.length - 1; //3
+    return questionsObj[quizId].questions.length - 1;
   };
 
   nextQuestion = () => {
@@ -61,7 +61,7 @@ class QuestionPreview extends React.Component {
       addFavorite,
       deleteFavorite,
     } = this.props;
-    const questions = questionsObj[quizId].questions;
+    const questions = questionsObj[quizId]?.questions || [];
     return (
       <div className="quiz-container">
         <h3 className="question-count">
