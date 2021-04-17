@@ -1,34 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./quiz-page.styles.scss";
 import QuestionPreview from "../../components/question-preview/question-preview.component";
 import { connect } from "react-redux";
 import { fetchQuestionsStartAsync } from "../../redux/quiz/quiz.actions";
 import { BackToAllButton } from "../../components/buttons";
 
-class QuizPage extends React.Component {
-  unsubscribeFromSnapshot = null;
-
-  componentDidMount() {
-    const { fetchQuestionsStartAsync } = this.props;
+const QuizPage = ({ questions, fetchQuestionsStartAsync }) => {
+  useEffect(() => {
     fetchQuestionsStartAsync();
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const { quizId } = useParams();
 
-  render() {
-    const { match, questions } = this.props;
-    const id = match.params.quizId;
-    return (
-      <div className="quiz-page">
-        <div className="button-container">
-          <BackToAllButton />
-        </div>
-        <h1>Welcome to {id.toUpperCase()} Challenge</h1>
-        <QuestionPreview quizId={id} addToFav={true} questionsObj={questions} />
+  return (
+    <div className="quiz-page">
+      <div className="button-container">
+        <BackToAllButton />
       </div>
-    );
-  }
-}
+      <h1>Welcome to {quizId.toUpperCase()} Challenge</h1>
+      {questions[quizId] ? (
+        <QuestionPreview
+          quizId={quizId}
+          addToFav={true}
+          questionsObj={questions}
+        />
+      ) : null}
+    </div>
+  );
+};
 const mapStateToProps = (state) => {
-  return { questions: state.quiz?.questions || [] };
+  return { questions: state.quiz?.questions || {} };
 };
 
 const mapDispatchToProps = (dispatch) => ({
