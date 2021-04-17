@@ -5,12 +5,13 @@ import rootReducer from './root-reducer';
 import thunk from 'redux-thunk';
 
 const middlewares = [thunk];
-if(process.env.NODE_ENV === "development") {
-    middlewares.push(logger);
-}
+// if(process.env.NODE_ENV === "development") {
+middlewares.push(logger);
+// }
 
 export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 export const persistor = persistStore(store);
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { store, persistor };
