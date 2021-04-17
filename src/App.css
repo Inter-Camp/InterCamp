@@ -29,10 +29,6 @@ ul {
   box-sizing: border-box;
 }
 
-#root {
-  height: 100%;
-}
-
 .App {
   height: 100%;
   display: flex;
