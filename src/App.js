@@ -11,6 +11,7 @@ import UserPage from './pages/user';
 import FavoritePage from './pages/favorite';
 import SignUpPage from './pages/sign-in-and-sign-up';
 import { auth, createUserProfileDocument } from "./firebase/firebas.utils";
+import ScrollToTop from './components/scroll-to-top';
 
 function App(props) {
   // const history = useHistory();
@@ -39,6 +40,7 @@ function App(props) {
   return (
     <div className='App'>
       <Header />
+      <ScrollToTop />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/quiz" component={ChooseQuizPage} />
