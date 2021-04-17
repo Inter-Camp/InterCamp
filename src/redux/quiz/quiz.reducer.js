@@ -3,7 +3,11 @@ import QuizActionTypes from './quiz.types'
 import { addItemToFavourite, deleteItemFromFavorite } from './quiz.utils';
 
 const INITIAL_STATE = {
-    questions: null,
+    questions: {
+        favorite: {
+            questions: []
+        }
+    },
     isFetching: false,
     errorMessage: undefined
 }
