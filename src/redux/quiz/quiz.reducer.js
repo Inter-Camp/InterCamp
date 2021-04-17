@@ -1,4 +1,4 @@
-import QUIZ_DATA from './quiz.data';
+//import QUIZ_DATA from './quiz.data';
 import QuizActionTypes from './quiz.types'
 import { addItemToFavourite, deleteItemFromFavorite } from './quiz.utils';
 
