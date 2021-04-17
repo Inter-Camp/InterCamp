@@ -22,15 +22,15 @@ export const ourPros = [
 export const links = [
     {
         title: 'Home',
-        linkUrl: './'
+        linkUrl: '/'
     },
     {
         title: 'Quizzes',
-        linkUrl: './quiz'
+        linkUrl: '/quiz'
     },
     {
         title: 'FAQ',
-        linkUrl: './'
+        linkUrl: '/'
     },
 ]
 
