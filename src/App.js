@@ -10,7 +10,6 @@ import Header from "./components/header/header.component";
 import UserPage from './pages/user';
 import FavoritePage from './pages/favorite';
 import SignUpPage from './pages/sign-in-and-sign-up';
-import Footer from './components/footer/footer.component'
 import { auth, createUserProfileDocument } from "./firebase/firebas.utils";
 
 function App(props) {
@@ -48,7 +47,6 @@ function App(props) {
         <Route path="/favorite" component={FavoritePage} />
         <Route path='/signin' render={() => props.currentUser ? (<Redirect to='/quiz' />) : (<SignUpPage />)} />
       </Switch>
-      <Footer />
     </div>
   );
 }
