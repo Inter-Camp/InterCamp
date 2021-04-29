@@ -96,11 +96,11 @@ const handleDuplicateAccounts = (error) => {
     }
 }
 
-export const signInWithGoogle = () => auth.signInWithRedirect(googleprovider).catch(handleDuplicateAccounts);
+export const signInWithGoogle = () => auth.signInWithPopup(googleprovider).catch(handleDuplicateAccounts);
 
-export const signInWithFacebook = () => auth.signInWithRedirect(fbprovider).catch(handleDuplicateAccounts);
+export const signInWithFacebook = () => auth.signInWithPopup(fbprovider).catch(handleDuplicateAccounts);
 
-export const signInWithGitHub = () => auth.signInWithRedirect(githubprovider).catch(handleDuplicateAccounts);
+export const signInWithGitHub = () => auth.signInWithPopup(githubprovider).catch(handleDuplicateAccounts);
 
 
 
