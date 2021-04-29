@@ -81,16 +81,16 @@ const getProviderById = (id) => {
 }
 
 const handleDuplicateAccounts = (error) => {
+    debugger;
     if (error.code === 'auth/account-exists-with-different-credential') {
         var pendingCred = error.credential;
         var email = error.email;
         auth.fetchSignInMethodsForEmail(email).then(function (methods) {
             const provider = getProviderById(methods[0]);
             auth.signInWithPopup(provider).then(function (result) {
-                result.User.linkAndRetrieveDataWithCredential(pendingCred).then(function (usercred) {
-                    // handle userCredential
-                    //console.log(usercred);
-                });
+                result.user.linkWithCredential(pendingCred).then((usercred) => {
+                    console.log(usercred)
+                })
             });
         });
     }
@@ -101,7 +101,5 @@ export const signInWithGoogle = () => auth.signInWithPopup(googleprovider).catch
 export const signInWithFacebook = () => auth.signInWithPopup(fbprovider).catch(handleDuplicateAccounts);
 
 export const signInWithGitHub = () => auth.signInWithPopup(githubprovider).catch(handleDuplicateAccounts);
-
-
 
 export default firebase;
