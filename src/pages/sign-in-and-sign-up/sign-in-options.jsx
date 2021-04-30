@@ -15,16 +15,16 @@ const SignInOptions = ({
           onClick={signInWithGoogle}
         ></IButtonPrimary>
       </div>
-      <div className="sign-in-options-button-container">
+      <div className="sign-in-options-button-container disabled">
         <IButtonPrimary
           iconUrl={signInOptions.github.imageUrl}
-          onClick={signInWithGitHub}
+          // onClick={signInWithGitHub}
         ></IButtonPrimary>
       </div>
-      <div className="sign-in-options-button-container">
+      <div className="sign-in-options-button-container disabled">
         <IButtonPrimary
           iconUrl={signInOptions.facebook.imageUrl}
-          onClick={signInWithFacebook}
+          // onClick={signInWithFacebook}
         ></IButtonPrimary>
       </div>
     </section>
