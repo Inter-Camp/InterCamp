@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./sign-in-and-sign-up.styles.scss";
 import { signUp, signIn, signInOptions } from "../../data/index";
 import Spacer from "../../components/spacer";
@@ -6,6 +6,7 @@ import Form from "../../components/form";
 import IntroMssg from "./intro-mssg";
 import SignInOptions from "./sign-in-options";
 import { auth, createUserProfileDocument } from "../../firebase/firebas.utils";
+import { connect } from "react-redux";
 
 import {
   signInWithGoogle,
@@ -13,23 +14,25 @@ import {
   signInWithGitHub,
 } from "../../firebase/firebas.utils";
 
-const SignInPage = () => {
+const SignInPage = ({ errorMsg }) => {
   const [pageData, updateData] = useState(signUp);
   // eslint-disable-next-line no-unused-vars
   const [values, setValues] = useState({});
   const [errorMssg, setErrorMssg] = useState("");
+
+  useEffect(() => {
+    setErrorMssg(errorMsg);
+  }, [errorMsg]);
 
   const changePageData = () => {
     pageData.id === "signUp" ? updateData(signIn) : updateData(signUp);
   };
 
   const handleSignIn = async (email, password) => {
-    // email & password for sign-in check (email: s.karl@gmail.com password: s.karl@gmail.com)
     try {
       await auth.signInWithEmailAndPassword(email, password);
       setValues({});
     } catch (error) {
-      console.log(error.message);
       setErrorMssg(error.message);
     }
   };
@@ -43,7 +46,6 @@ const SignInPage = () => {
       await createUserProfileDocument(user, { name });
       setValues({});
     } catch (error) {
-      console.log(error);
       setErrorMssg(error.message);
     }
   };
@@ -90,4 +92,8 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+const mapStateToProps = (state) => ({
+  errorMsg: state.user.errorMsg,
+});
+
+export default connect(mapStateToProps)(SignInPage);
