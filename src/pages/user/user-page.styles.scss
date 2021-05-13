@@ -41,10 +41,6 @@
         padding: 60px 30px;
         width: 80%;
         height: calc(100vh - 70px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         background: rgba(245, 123, 0, 0.1);
         .link-to-all {
             margin-bottom: 10px;
@@ -58,5 +54,11 @@
         .custom-button {
             width: 100%;
         }
+    }
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 }
