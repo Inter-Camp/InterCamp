@@ -69,37 +69,13 @@ const fbprovider = new firebase.auth.FacebookAuthProvider();
 fbprovider.setCustomParameters({ display: 'popup' });
 
 var githubprovider = new firebase.auth.GithubAuthProvider();
-githubprovider.setCustomParameters({ login: "select_account" })
+githubprovider.setCustomParameters({ login: "" })
 
-const getProviderById = (id) => {
-    const providers = {
-        'google.com': googleprovider,
-        'github.com': githubprovider,
-        'facebook.com': fbprovider
-    }
-    return providers[id];
-}
+export const signInWithGoogle = () => auth.signInWithRedirect(googleprovider);
 
-const handleDuplicateAccounts = (error) => {
-    debugger;
-    if (error.code === 'auth/account-exists-with-different-credential') {
-        var pendingCred = error.credential;
-        var email = error.email;
-        auth.fetchSignInMethodsForEmail(email).then(function (methods) {
-            const provider = getProviderById(methods[0]);
-            auth.signInWithPopup(provider).then(function (result) {
-                result.user.linkWithCredential(pendingCred).then((usercred) => {
-                    console.log(usercred)
-                })
-            });
-        });
-    }
-}
+export const signInWithFacebook = () => auth.signInWithRedirect(fbprovider);
 
-export const signInWithGoogle = () => auth.signInWithPopup(googleprovider).catch(handleDuplicateAccounts);
+export const signInWithGitHub = () => auth.signInWithRedirect(githubprovider);
 
-export const signInWithFacebook = () => auth.signInWithPopup(fbprovider).catch(handleDuplicateAccounts);
-
-export const signInWithGitHub = () => auth.signInWithPopup(githubprovider).catch(handleDuplicateAccounts);
 
 export default firebase;
