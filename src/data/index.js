@@ -1,5 +1,4 @@
-export const ourPros = [
-    {
+export const ourPros = [{
         id: 'our-pro-1',
         imgUrl: './images/home-00.jpg',
         imgAlt: 'illustration of a woman with red hair',
@@ -19,8 +18,7 @@ export const ourPros = [
     }
 ]
 
-export const links = [
-    {
+export const links = [{
         title: 'Home',
         linkUrl: '/'
     },
@@ -52,8 +50,7 @@ export const signUp = {
     imgUrl: './images/join-us.png',
     accountExists: 'Aready have an account?',
     submitLabel: 'Sign Up',
-    inputFields: [
-        {
+    inputFields: [{
             id: 'name',
             type: 'text',
             placeholder: 'Enter Your Name',
@@ -81,8 +78,7 @@ export const signIn = {
     imgUrl: './images/join-us.png',
     accountExists: 'Create an account!',
     submitLabel: 'Sign In',
-    inputFields: [
-        {
+    inputFields: [{
             id: 'emailfield',
             type: 'email',
             placeholder: 'Enter Your Email',
@@ -136,4 +132,13 @@ export const header = {
     websiteName: 'InterCamp',
     signInLink: '/signin',
     signInLabel: 'Sign In',
+}
+
+export const userMenu = {
+    menuLabels: [
+        { id: 1, text: 'Dashboard', comp: 'Dashboard', link: '/user/dashboard' },
+        { id: 2, text: 'Bookmarks', comp: 'Bookmarks', link: '/user/bookmarks' },
+        { id: 3, text: 'Trending', comp: 'Trending', link: '/user/trending' },
+        { id: 4, text: 'Statistics', comp: 'Statistics', link: '/user/statistics' }
+    ]
 }

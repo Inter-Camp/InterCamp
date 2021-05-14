@@ -1,20 +1,64 @@
 .user-page {
-  .nav-container {
-    margin: 60px auto;
-    width: 140px;
-    min-height: 200px;
+    width: 100vw;
+    height: calc(100vh - 70px);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .link-to-all {
-      width: 100%;
-      display: block;
-
-      .back-to-all-button,
-      .custom-button {
-        width: 100%;
-      }
+    box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    .nav-items {
+        height: calc(100vh - 70px);
+        width: 20%;
+        // max-width: 300px;
+        background: rgba(245, 123, 0, 0.2);
+        .nav-lists {
+            position: relative;
+            margin: 10px 10px 0;
+            padding: 20px 10px;
+            z-index: 1;
+            border: 1px solid rgba(245, 123, 0, 0.8);
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: .8;
+            transition: .3s all;
+        }
+        .nav-lists:hover {
+            background: rgba(245, 123, 0, 0.2);
+        }
+        .nav-lists:active {
+            background: rgba(245, 123, 0, 0.3);
+        }
+        .nav-lists>a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
-  }
+    .nav-container {
+        margin: 0;
+        padding: 60px 30px;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background: rgba(245, 123, 0, 0.1);
+        .link-to-all {
+            margin-bottom: 10px;
+            width: 100%;
+            display: block;
+            .back-to-all-button,
+            .custom-button {
+                width: 100%;
+            }
+        }
+        .custom-button {
+            width: 100%;
+        }
+    }
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }
