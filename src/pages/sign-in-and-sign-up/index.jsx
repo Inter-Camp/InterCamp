@@ -7,6 +7,7 @@ import IntroMssg from "./intro-mssg";
 import SignInOptions from "./sign-in-options";
 import { auth, createUserProfileDocument } from "../../firebase/firebas.utils";
 import { connect } from "react-redux";
+import Spinner from "../../components/spinner";
 
 import {
   signInWithGoogle,
@@ -14,7 +15,7 @@ import {
   signInWithGitHub,
 } from "../../firebase/firebas.utils";
 
-const SignInPage = ({ errorMsg }) => {
+const SignInPage = ({ errorMsg, isFetching }) => {
   const [pageData, updateData] = useState(signUp);
   // eslint-disable-next-line no-unused-vars
   const [values, setValues] = useState({});
@@ -72,28 +73,35 @@ const SignInPage = ({ errorMsg }) => {
 
   return (
     <section className="sign-in-container">
-      <IntroMssg data={pageData} />
-      <div className="sign-in-form-container">
-        <div className="sign-up-form">
-          <Form data={pageData} onSubmit={onFormSubmit} />
-          <p className="sign-up-link-sign-in" onClick={changePageData}>
-            {pageData.accountExists}
-          </p>
-          <h4 className="error-mssg">{errorMssg}</h4>
-        </div>
-        <Spacer>{signInOptions.optionText}</Spacer>
-        <SignInOptions
-          signInWithGoogle={signInWithGoogle}
-          signInWithFacebook={signInWithFacebook}
-          signInWithGitHub={signInWithGitHub}
-        />
-      </div>
+      {isFetching ? (
+        <Spinner />
+      ) : (
+        <>
+          <IntroMssg data={pageData} />
+          <div className="sign-in-form-container">
+            <div className="sign-up-form">
+              <Form data={pageData} onSubmit={onFormSubmit} />
+              <p className="sign-up-link-sign-in" onClick={changePageData}>
+                {pageData.accountExists}
+              </p>
+              <h4 className="error-mssg">{errorMssg}</h4>
+            </div>
+            <Spacer>{signInOptions.optionText}</Spacer>
+            <SignInOptions
+              signInWithGoogle={signInWithGoogle}
+              signInWithFacebook={signInWithFacebook}
+              signInWithGitHub={signInWithGitHub}
+            />
+          </div>
+        </>
+      )}
     </section>
   );
 };
 
 const mapStateToProps = (state) => ({
   errorMsg: state.user.errorMsg,
+  isFetching: state.user.isFetching,
 });
 
 export default connect(mapStateToProps)(SignInPage);
