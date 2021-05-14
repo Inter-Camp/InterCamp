@@ -10,20 +10,20 @@ import {
 const StarFavorite = ({ favQuestions }) => {
   //   const { favQuestions } = this.props;
   return (
-      <Link to={"/favorite"}>
-    <div>
-      {favQuestions.questions.length ? (
-        <FilledStarIcon />
-      ) : (
-        <OutlinedStarIcon />
-      )}
-    </div>
-      </Link>
+    <Link to={"/favorite"}>
+      <div>
+        {favQuestions.questions.length ? (
+          <FilledStarIcon />
+        ) : (
+          <OutlinedStarIcon />
+        )}
+      </div>
+    </Link>
   );
 };
 
 const mapStateToProps = (state) => {
-  return { favQuestions: state.quiz.questions.favorite };
+  return { favQuestions: state.quiz.questions?.favorite || {} };
 };
 
 export default connect(mapStateToProps)(StarFavorite);

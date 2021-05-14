@@ -8,7 +8,7 @@ import { CustomButtonOutlined } from "../buttons";
 import { AccountIcon } from "../icons/account-icon.component";
 import StarFavorite from "../star-favorite/star-favorite.component";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, favQuestions }) => {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -18,7 +18,7 @@ const Header = ({ currentUser }) => {
         <h3 className="website-name">{header.websiteName}</h3>
       </Link>
       <div className="button-container">
-        {currentUser ? (
+        {currentUser && favQuestions ? (
           <div className="user-fav-container">
             <StarFavorite />
             <Link to="/user">
@@ -37,5 +37,6 @@ const Header = ({ currentUser }) => {
 
 const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
+  favQuestions: state.quiz.questions.favorite.questions,
 });
 export default connect(mapStateToProps)(Header);
