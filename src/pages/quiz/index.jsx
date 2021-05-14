@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense, lazy } from "react";
 import { useParams } from "react-router-dom";
 import "./quiz-page.styles.scss";
-import QuestionPreview from "../../components/question-preview/question-preview.component";
 import { connect } from "react-redux";
 import { fetchQuestionsStartAsync } from "../../redux/quiz/quiz.actions";
 import { BackToAllButton } from "../../components/buttons";
+import Spinner from "../../components/spinner";
+
+const QuestionPreview = lazy(() =>
+  import("../../components/question-preview/question-preview.component")
+);
 
 const QuizPage = ({ questions, fetchQuestionsStartAsync }) => {
   useEffect(() => {
@@ -19,13 +23,15 @@ const QuizPage = ({ questions, fetchQuestionsStartAsync }) => {
         <BackToAllButton />
       </div>
       <h1>Welcome to {quizId.toUpperCase()} Challenge</h1>
-      {questions[quizId] ? (
-        <QuestionPreview
-          quizId={quizId}
-          addToFav={true}
-          questionsObj={questions}
-        />
-      ) : null}
+      <Suspense fallback={<Spinner />}>
+        {questions[quizId] ? (
+          <QuestionPreview
+            quizId={quizId}
+            addToFav={true}
+            questionsObj={questions}
+          />
+        ) : null}
+      </Suspense>
     </div>
   );
 };
