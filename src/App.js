@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
-import { setCurrentUser, isFetching } from './redux/user/user.actions';
+import { setCurrentUser } from './redux/user/user.actions';
 import ChooseQuizPage from "./pages/choose-quiz";
 import HomePage from "./pages/home";
 import QuizPage from "./pages/quiz";
@@ -18,7 +18,6 @@ function App(props) {
   useEffect(() => {
     const unsubscibeFromAuth = auth.onAuthStateChanged(async userAuth => {
       // check if there is a user
-      props.isFetching(true)
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
         // subsrcibe to changes
@@ -60,7 +59,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: user => dispatch(setCurrentUser(user)),
-  isFetching: payload => dispatch(isFetching(payload))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
