@@ -2,7 +2,7 @@ import { UserActionTypes } from './user.types';
 
 const INITIAL_STATE = {
     currentUser: null,
-    isFetching: false,
+    isFetching: true,
     errorMsg: ''
 }
 
