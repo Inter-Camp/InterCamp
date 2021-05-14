@@ -3,15 +3,11 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-export const setCurrentUser = user => ({
-    type: UserActionTypes.SET_CURRENT_USER,
-    payload: user,
-});
+export const setCurrentUser = user => ({ type: UserActionTypes.SET_CURRENT_USER, payload: user });
 
-export const accountExistsError = error => ({
-    type: UserActionTypes.ACCOUNT_EXISTS_ERROR,
-    payload: error
-})
+export const isFetching = payload => ({ type: UserActionTypes.IS_FETCHING, payload: payload })
+
+export const accountExistsError = error => ({ type: UserActionTypes.ACCOUNT_EXISTS_ERROR, payload: error })
 
 export const fetchAccountExistsError = () => {
     return dispatch => {
