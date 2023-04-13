@@ -230,6 +230,52 @@ It also means you can use the same styles on multiple pages.
                 answer: `<video> and <audio> are the new tags which are introduced in the HTML5.
 They are basically used as a replacement of flash player and Silverlight to play multimedia items in the web pages.`,
             },
+            {
+                id: 207,
+                question: `What is the difference between the id and class attributes in HTML?`,
+                answer: `In HTML, the id attribute is used to specify a unique identifier for an element, while the class attribute is used to specify one or more classes that an element belongs to. A unique id can be used to select and style a specific element, while a class can be used to style multiple elements that share the same class.`,
+            },
+            {
+                id: 208,
+                question: `What is semantic HTML, and why is it important?`,
+                answer: `Semantic HTML refers to the practice of using HTML markup to convey the meaning and structure of content on a webpage, rather than using markup solely for presentation purposes. This can help improve the accessibility, maintainability, and search engine optimization of a webpage. It makes the markup more readable and understandable for us.`,
+            },
+            {
+                id: 209,
+                question: `How can you group multiple radio buttons together in HTML, and what is the purpose of doing so?`,
+                answer: `You can group multiple radio buttons together by using the name attribute with the same value on each button. This will ensure that only one radio button in the group can be selected at a time. Grouping radio buttons together is important for providing a clear and consistent interface for users to make choices, such as selecting a gender or choosing a payment method on a checkout page.`,
+            },
+            {
+                id: 210,
+                question: `What is the purpose of the alt attribute in the <img> tag, and why is it important for accessibility?`,
+                answer: `The alt attribute in the <img> tag is used to provide alternative text that describes the content of an image. This text is displayed by screen readers or other assistive technologies when the image cannot be rendered or is not visible to the user, such as in cases of slow internet connections, images turned off by the user, or for visually-impaired users who rely on assistive technologies.`,
+            },
+            {
+                id: 211,
+                question: `What is the <input type="file"> element in HTML used for, and how can you restrict the types of files that can be uploaded using this element?`,
+                answer: `The <input type="file"> element in HTML is used for file uploads. When the user clicks on this input element, they can select one or more files from their computer to upload to the web server.
+
+                To restrict the types of files that can be uploaded using this element, you can use the accept attribute and set it to a comma-separated list of file types or MIME types. For example, accept="image/*" would allow only image files to be uploaded, while accept=".pdf,.doc" would allow only PDF and Word documents to be uploaded.`,
+            },
+            {
+                id: 212,
+                question: `What is the purpose of the <meta> element in the <head> section of an HTML document, and how can it be used to improve SEO?`,
+                answer: `The <meta> element in the <head> section of an HTML document is used to provide metadata about the document, such as the author, description, keywords, and character encoding.
+
+                One common use of the <meta> element is to provide information to search engines about the content of the webpage. This can be done using the name="description" attribute to provide a brief description of the page, and the name="keywords" attribute to provide a list of relevant keywords. This can improve the search engine optimization (SEO) of the webpage, making it more likely to appear in search results for relevant queries.
+                
+                Another important use of the <meta> element is to specify the character encoding of the document, using the charset attribute. This ensures that the browser can correctly render special characters and symbols, and improves the overall accessibility of the webpage.`,
+            },
+            {
+                id: 213,
+                question: `What is the purpose of the <iframe> element in HTML?`,
+                answer: `The <iframe> element in HTML is used to embed content from other websites or web applications within a webpage. This can be useful for displaying content such as maps, videos, or social media feeds, without requiring the user to leave the current page.`,
+            },
+            {
+                id: 214,
+                question: `What is the purpose of the data-* attributes in HTML?`,
+                answer: `The data-* attributes in HTML are used to store custom data or metadata about elements in a webpage. They can be set with any value and are useful for scripting or other purposes where additional information is needed beyond the content or presentation of the element. To use a data-* attribute, you simply include the attribute name in the format data-attribute-name, set the value of the attribute to any valid string value, and then use JavaScript to access the value of the attribute.`,
+            },
         ],
     },
     css: {
@@ -320,11 +366,98 @@ It is used in CSS to define the hierarchy from the top level to the bottom level
 Normalize you might call a CSS reset alternative. Instead of wiping out all styles, it delivers a set of reasonable defaults. It doesn’t unset things that are already consistent across browsers and reasonable (e.g. bold headers). In that way it does some less than a reset. It also does some more than a reset in that it handles quirks you may never consider, like HTML5 audio element inconsistencies or line-height inconsistencies when you use sub and sup elements.`
             },
             {
-                id: 311,
+                id: 312,
                 question: `What are the benefits of SVG?`,
                 answer: `SVG is an image format that is vector based. It’s an efficient format for that (small file sizes). You can scale them and they retain their sharpness at any size (bonus points for mentioning raster might have the upper hand at tiny sizes). You can affect parts of them with CSS and JavaScript as well as SVG specific filters that can do things like blurring.`
             },
+            {
+                id: 313,
+                question: `State some ways to center a div using CSS.`,
+                answer: `There are several ways to center a div in CSS. Some of them are-
+                
+                -Using flexbox: This is probably the easiest and the most common way to center a div. You apply display: flex to the container div and then use justify-content and align-items properties of flexbox. For eg.
+                
+                .container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                  
+                -Using grid: This is similar to using flexbox where you apply display: grid to the container div. In a grid layout, we have a property called place-items which we would use in this case. An example would be
+                
+                .container {
+                    display: grid;
+                    place-items: center;
+                }
+                
+                -Using absolute positioning: This would require the parent div to have been positioned relative. We can use the top/left/bottom/right properties on our absolutely positioned element then. For eg.
+                
+                .container {
+                    position: relative;
+                }
+                  
+                  .child {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }`
+            },
+            {
+                id: 314,
+                question: `What is the purpose of the "z-index" property in CSS, and how does it work?`,
+                answer: `The "z-index" property in CSS determines the stacking order of positioned elements that overlap each other on the z-axis. It can take any integer value, with higher values placing elements in front of elements with lower values or no value at all. Elements with the same "z-index" value are placed in the order in which they appear in the HTML markup. It only works on elements that have a "position" value of "relative", "absolute", or "fixed".`
+            },
+            {
+                id: 315,
+                question: `What are keyframes in CSS?`,
+                answer: `In CSS, keyframes are used to define the intermediate steps of an animation sequence. They allow developers to specify the styles that an element should have at different points in the animation, creating a smooth transition between those points. To use keyframes, you define a series of rules using the "@keyframes" at-rule, which specify the style properties at different percentages of the animation's duration. These rules can then be applied to an element using the "animation" property. By specifying different keyframes at different percentages, you can create a wide range of animations and transitions in your web pages.`
+            },
+            {
+                id: 316,
+                question: `How do you create a gradient background in CSS?`,
+                answer: `To create a gradient background in CSS, you can use the "background-image" property and set its value to a linear gradient function. The linear gradient function takes two or more color stops, and generates a gradient between them.
+                
+                For example, to create a horizontal gradient that transitions from red to blue, you could use the following CSS:
+                
+                background-image: linear-gradient(to right, red, blue);`
+            },
+            {
+                id: 317,
+                question: `What is the difference between the "border" and "outline" properties in CSS, and when would you use one over the other?`,
+                answer: `The main difference between the two is that a border affects the actual dimensions of an element, while an outline does not. This means that if you add a border to an element, it will increase its width and height by the size of the border, while an outline will not.
+                
+                You would typically use a border when you want to create a visible boundary around an element, while an outline can be used for decorative purposes or to provide visual feedback, such as indicating that an element has focus.`
+            },
+            {
+                id: 318,
+                question: `What is the difference between a pseudo-class and a pseudo-element in CSS, and give an example of each?`,
+                answer: `A pseudo-class in CSS is used to style an element based on its state, such as when it's being hovered over or clicked. An example of a pseudo-class is :hover.
 
+                A pseudo-element, on the other hand, is used to style a specific part of an element, such as the first line of a paragraph or the content inside a button. An example of a pseudo-element is ::before or ::after.`
+            },
+            {
+                id: 319,
+                question: `What are CSS variables, how are they declared and used in CSS, and what are some benefits of using them?`,
+                answer: `CSS variables, also known as custom properties, allow you to declare a variable with a specific value and reuse that value throughout your CSS. They are declared using the -- prefix followed by a name and value. You can then use the variable value by referencing it with the var() function. Here is an example use case of css variables.
+                
+                :root {
+                    --background-color: #f0f0f0;
+                    --text-color: #333;
+                }
+                  
+                  body {
+                    background-color: var(--background-color);
+                    color: var(--text-color);
+                }
+                  
+                  body.dark-mode {
+                    --background-color: #333;
+                    --text-color: #f0f0f0;
+                }
+                
+                In this example, we declare two CSS variables --background-color and --text-color with their respective values. We then use these variables to set the background color and text color of the body element. Finally, we define a .dark-mode class to override the variable values with new colors, effectively creating a dark mode theme. We would have a theme toggler in our HTML and we would handle that theme toggle using javascript logic.`
+            },
         ]
     },
     react: {
