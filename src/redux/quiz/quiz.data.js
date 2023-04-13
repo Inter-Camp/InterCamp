@@ -93,12 +93,66 @@ It compares both value and type.`
             },
             {
                 id: 119,
-                question: `What is the difference between ‘null’ and ‘undefined’?`,
-                answer: `Both keywords represent empty values.
-In ‘undefined’, we will define a variable, but we won’t assign a value to that variable.
-On the other hand, in ‘null’ we will define a variable and assign the ‘null’ value to the variable.
+                question: `What is debouncing in javascript?`,
+                answer: `Debouncing is a programming practice used to ensure that time-consuming tasks do not fire so often, that it stalls the performance of the web page.
+                
+                In javascript, it s a practice used to improve browser performance. There might be some functionality in a web page that requires time-consuming computations. If such a method is invoked frequently, it might greatly affect the performance of the browser, as JavaScript is a single-threaded language.
         `
             },
+            {
+                id: 120,
+                question: `What is the difference between call, apply, and bind methods in JavaScript?`,
+                answer: `The call, apply, and bind methods are used to manipulate the this keyword in JavaScript, which refers to the context in which a function is called.
+
+                call method is used to invoke a function with a specified this value and any number of arguments passed individually. The syntax for call is function.call(thisArg, arg1, arg2, ...).
+
+                apply method is similar to call, but the arguments are passed as an array instead of individually. The syntax for apply is function.apply(thisArg, [argsArray]).
+
+                bind method returns a new function with the same code as the original function, but with a permanently bound this value. The syntax for bind is function.bind(thisArg, arg1, arg2, ...). It can also be used to partially apply arguments.
+        `
+            },
+            {
+                id: 121,
+                question: `What is 'this' keyword in javascript?`,
+                answer: `In JavaScript, 'this' is a keyword that refers to the object that is currently executing a function. The value of this is determined at runtime, based on how the function is invoked.
+
+                For eg. in global scope, 'this' keyword would refer to the window object. In an object such as...
+
+                const person = {
+                    firstName: 'John',
+                    lastName: 'Doe',
+                    fullName: function() {
+                        return this.firstName + ' ' + this.lastName;
+                    }
+                };
+
+                'this' keyword would refer to the object person.
+        `
+            },
+            {
+                id: 122,
+                question: `What do you understand by async await in javascript?`,
+                answer: `Async/await is a modern feature in javascript that simplifies the way we write asynchronous code. Its built on top of promises and an async function always returns a promise. An async function would make asynchronous code more readable than using promises.
+
+                Basically you need to declare a function as async as follows...
+
+                async function () {
+                    // asynchoronous code here...
+                }
+
+                inside the async function, you can use the await keyword to wait for the resolution of a Promise before continuing with the execution of the function. An example usecase of an async function would be...
+
+                async function fetchData (url) {
+                    const res = await fetch (url);
+                    const data = await res.json ();
+                    if (data.ok) console.log (data);
+                    else console.log ('Error fetching the data!');
+                }
+
+                fetchData (url1);
+                fetchData (url2);
+        `
+            }
         ],
     },
 
