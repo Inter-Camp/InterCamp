@@ -1,0 +1,18 @@
+.quiz-selection-container {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px auto 120px auto;
+  text-align: left;
+  h1 {
+    width: 70%;
+    font-size: 40px;
+  }
+  @media (max-width: 768px) {
+    max-width: 80%;
+    h1{
+      width: 100%;
+    }
+  }
+}
