@@ -38,4 +38,23 @@ Authenticate Using **Google Sign-In, GitHub Sig-in, Facebook Login.**
 <image width="100%" src="https://user-images.githubusercontent.com/62475313/95633508-cb0c2200-0a55-11eb-9165-23a409f34ad0.png" frameborder="0" ></image>
 
 ---
+## Development
+```aidl
+// install node 18
+nvm install 18
+```
 
+```aidl
+// update your react-scripts package to latest version
+npm i react-scripts@latest
+```
+
+```aidl
+// install dependencies
+npm install
+```
+
+```aidl
+// build app 
+npm run build
+```
